@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".template.src.Shopdetatil.ShopDetail">
+        </activity>
+        <activity android:name=".template.src.MainChaChaCha.Chachacha" />
         <activity android:name=".template.src.Mypage.Mypage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".template.src.Register.Register_Success" />
-        <activity android:name=".template.src.Register.Register_customer"></activity>
+        <activity android:name=".template.src.Register.Register_customer" />
         <activity android:name=".template.src.Login.Login" />
         <activity android:name=".template.src.Splash.Splash" />
     </application>

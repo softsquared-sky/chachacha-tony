@@ -13,6 +13,6 @@ public class Register_Success extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register__success);
-        getWindow().setStatusBarColor(Color.parseColor("##FF7889"));
+        getWindow().setStatusBarColor(Color.parseColor("#FF7889"));
     }
 }
