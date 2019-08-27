@@ -1,5 +1,6 @@
 package com.example.project_chachacha.template.src.Mypage;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,10 @@ import java.util.ArrayList;
 public class reviewlist_adapter extends RecyclerView.Adapter<reviewlist_adapter.CustomViewHolder> {
 
     private ArrayList<review_item> arrayList;
+    private Context context;
 
-    public reviewlist_adapter(ArrayList<review_item> arrayList) {
+    public reviewlist_adapter(Context context, ArrayList<review_item> arrayList) {
+        this.context = context;
         this.arrayList = arrayList;
     }
 

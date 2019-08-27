@@ -52,12 +52,13 @@
                     android:layout_gravity="bottom"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_star_yellow_24dp"/>
+
                 <ImageView
                     android:id="@+id/rate3"
-                    android:layout_gravity="bottom"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/ic_star_yellow_24dp"/>
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/ic_star_yellow_24dp" />
                 <ImageView
                     android:id="@+id/rate4"
                     android:layout_gravity="bottom"

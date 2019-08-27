@@ -9,20 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".template.src.Shopdetatil.ShopDetail">
+        <activity android:name=".template.src.Register.Register_boss"></activity>
+        <activity android:name=".template.src.Cha_Shop_Detail.WriteReview" />
+        <activity android:name=".template.src.Cha_Shop_Detail.Cha_Shop_Detail">
         </activity>
+        <activity android:name=".template.src.MainChaChaCha.ChaChaCha2" />
+        <activity android:name=".template.src.ShopInfo.ShopInfo" />
+        <activity android:name=".template.src.Shopdetatil.ShopDetail" />
         <activity android:name=".template.src.MainChaChaCha.Chachacha" />
-        <activity android:name=".template.src.Mypage.Mypage">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".template.src.Mypage.Mypage"></activity>
         <activity android:name=".template.src.Register.Register_Success" />
         <activity android:name=".template.src.Register.Register_customer" />
         <activity android:name=".template.src.Login.Login" />
-        <activity android:name=".template.src.Splash.Splash" />
+        <activity android:name=".template.src.Splash.Splash">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
     </application>
 
 </manifest>

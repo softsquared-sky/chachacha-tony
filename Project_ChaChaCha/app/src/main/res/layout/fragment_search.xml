@@ -25,67 +25,29 @@
             android:layout_centerInParent="true"/>
     </RelativeLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp">
-        <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        android:background="@drawable/background_shadow">
+        <EditText
+            android:paddingStart="20dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <!--<View-->
-                <!--android:layout_width="15dp"-->
-                <!--android:layout_height="48dp"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:background="@drawable/left_shadow"/>-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:orientation="vertical">
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"
-                    android:background="@drawable/upper_shadow"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="38dp"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"
-                    android:background="@drawable/down_shadow"/>
-            </LinearLayout>
-            <!--<View-->
-                <!--android:layout_width="15dp"-->
-                <!--android:layout_height="48dp"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:background="@drawable/right_shadow"/>-->
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/style_search">
-            <EditText
-                android:paddingStart="20dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:hint="검색"
-                android:textSize="12sp"
-                android:textColor="#656565"
-                android:backgroundTint="#00ffffff" />
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="25dp"
-                android:src="@drawable/ic_search_black_24dp"/>
-        </LinearLayout>
-    </FrameLayout>
+            android:hint="검색"
+            android:textSize="12sp"
+            android:textColor="#656565"
+            android:backgroundTint="#00ffffff" />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/ic_search_black_24dp"/>
+    </LinearLayout>
 
 </LinearLayout>

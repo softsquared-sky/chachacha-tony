@@ -14,7 +14,7 @@
         android:layout_width="244dp"
         android:layout_height="93.2dp"
         android:layout_gravity="center"
-        android:background="#ffffff"
+        android:src="@drawable/ic_chalogo"
         android:layout_marginBottom="39.8dp"/>
     <TextView
         android:layout_width="wrap_content"
@@ -25,8 +25,9 @@
         android:textColor="#ffffff"
         android:textStyle="bold"
         android:textSize="16dp"
-        android:layout_marginBottom="154dp"/>
+        android:layout_marginBottom="134dp"/>
     <Button
+        android:id="@+id/goto_login"
         android:layout_width="160dp"
         android:layout_height="48dp"
         android:background="@drawable/style5"

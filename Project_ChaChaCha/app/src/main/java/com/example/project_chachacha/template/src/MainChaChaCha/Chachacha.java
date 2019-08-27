@@ -2,6 +2,7 @@ package com.example.project_chachacha.template.src.MainChaChaCha;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,7 @@ import com.example.project_chachacha.template.src.BaseActivity;
 public class Chachacha extends BaseActivity {
 
     private Button num1,num2,num3,num4,num5,num6;
-    private Button md1,md2,md3,md4,md5,md6,md7,md8;
+    private Button md1,md2,md3,md4,md5,md6,md7,md8,next;
     private ImageButton fd1,fd2,fd3,fd4,fd5,fd6,fd7,fd8,fd9,fd10,fd11,fd12,fd13,fd14,fd15,fd16;
 
     @Override
@@ -37,6 +38,14 @@ public class Chachacha extends BaseActivity {
         md6 = findViewById(R.id.mood6);
         md7 = findViewById(R.id.mood7);
         md8 = findViewById(R.id.mood8);
+        next = findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Chachacha.this, ChaChaCha2.class);
+                startActivity(intent);
+            }
+        });
 
         fd1 = findViewById(R.id.food1);
         fd2 = findViewById(R.id.food2);

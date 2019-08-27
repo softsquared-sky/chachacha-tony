@@ -47,7 +47,7 @@ public class Myreview extends Fragment {
 
         arrayList = new ArrayList<>();
 
-        adapter = new reviewlist_adapter(arrayList); // 생성에 context필요할수도?
+        adapter = new reviewlist_adapter(getActivity(), arrayList); // 생성에 context필요할수도?
 
         recyclerView.setAdapter(adapter);
         // Inflate the layout for this fragment

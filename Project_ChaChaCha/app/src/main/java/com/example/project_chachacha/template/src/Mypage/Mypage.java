@@ -23,6 +23,7 @@ public class Mypage extends BaseActivity {
     private ImageView mivstart;
     private ImageView search, page, mychachacha;
     private Search _search;
+    private MyChaChaCha myChaChaCha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,7 @@ public class Mypage extends BaseActivity {
 
         mypage_main = new Mypage_main();
         _search = new Search();
+        myChaChaCha = new MyChaChaCha();
 
         transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.frame_layout,mypage_main).commitAllowingStateLoss();
@@ -80,6 +82,7 @@ public class Mypage extends BaseActivity {
                 search.setImageResource(R.drawable.ic_msg);
                 page.setImageResource(R.drawable.ic_empty_mypage);
                 mychachacha.setImageResource(R.drawable.ic_red_like);
+                transaction.replace(R.id.frame_layout, myChaChaCha).commitAllowingStateLoss();
                 break;
         }
     }

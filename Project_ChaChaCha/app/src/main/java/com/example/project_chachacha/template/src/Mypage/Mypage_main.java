@@ -13,12 +13,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.project_chachacha.R;
+import com.example.project_chachacha.template.src.Mypage.StoreShop.StoreShop;
 
 
 public class Mypage_main extends Fragment {
 
     TextView mTvEdit;
     ImageView mIvreview;
+    ImageView mIvstore;
 
     public static Mypage_main newInstance(){
         return new Mypage_main();
@@ -40,6 +42,14 @@ public class Mypage_main extends Fragment {
             @Override
             public void onClick(View view) {
                 ((Mypage)getActivity()).replaceFragment(Myreview.newInstance());
+            }
+        });
+
+        mIvstore = (ImageView)view.findViewById(R.id.saveshop);
+        mIvstore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((Mypage)getActivity()).replaceFragment(StoreShop.newInstance());
             }
         });
         // Inflate the layout for this fragment

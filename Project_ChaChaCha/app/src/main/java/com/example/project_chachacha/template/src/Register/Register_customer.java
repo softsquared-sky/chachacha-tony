@@ -3,18 +3,23 @@ package com.example.project_chachacha.template.src.Register;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.project_chachacha.R;
+import com.example.project_chachacha.template.src.BaseActivity;
 
-public class Register_customer extends AppCompatActivity {
+public class Register_customer extends BaseActivity {
 
     private boolean age1checked = false, age2checked= false, age3checked=false, age4checked=false;
     private boolean gender_womanChecked = false, gender_manChecked = false;
     private Button age1,age2,age3,age4,genderw,genderm;
+    private ImageView mivback;
+    private Button mbtn_next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,24 @@ public class Register_customer extends AppCompatActivity {
         age4 = findViewById(R.id.age_btn4);
         genderw = findViewById(R.id.gender_woman);
         genderm = findViewById(R.id.gender_man);
+
+        mivback = findViewById(R.id.back);
+        mivback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        mbtn_next = findViewById(R.id.next);
+        mbtn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Register_customer.this, Register_Success.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     public void ageClick(View view){
