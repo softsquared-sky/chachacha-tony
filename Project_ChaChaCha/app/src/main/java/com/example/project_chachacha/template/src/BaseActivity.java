@@ -13,12 +13,26 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        onWindowFocusChanged(true);
         View view = getWindow().getDecorView();
         if(Build.VERSION.SDK_INT >=Build.VERSION_CODES.M){
             if (view != null) {
-                view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR|View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
             }
 
         }
     }
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if(hasFocus){
+            applyColors();
+        }
+    }
+
+    private void applyColors(){
+
+        getWindow().setNavigationBarColor(Color.WHITE);
+    }
+
 }

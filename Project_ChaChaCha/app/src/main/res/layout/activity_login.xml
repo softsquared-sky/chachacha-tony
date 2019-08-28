@@ -20,6 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"/>
     <EditText
+        android:id="@+id/userid"
+        android:singleLine="true"
+        android:nextFocusDown="@id/userpw"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:hint="아이디"
@@ -33,6 +36,9 @@
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"/>
     <EditText
+        android:singleLine="true"
+        android:nextFocusDown="@id/login"
+        android:id="@+id/userpw"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:hint="비밀번호"

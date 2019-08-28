@@ -21,7 +21,7 @@ public class ApplicationClass extends Application {
     public static MediaType MEDIA_TYPE_JPEG = MediaType.parse("image/jpeg");
 
     // 테스트 서버 주소
-    public static String BASE_URL = "http://apis.newvement.com/";
+    public static String BASE_URL = "http://106.10.50.207";
     // 실서버 주소
 //    public static String BASE_URL = "https://template.softsquared.com/";
 
@@ -53,7 +53,7 @@ public class ApplicationClass extends Application {
             OkHttpClient client = new OkHttpClient.Builder()
                     .readTimeout(5000, TimeUnit.MILLISECONDS)
                     .connectTimeout(5000, TimeUnit.MILLISECONDS)
-                    .addNetworkInterceptor(new XAccessTokenInterceptor()) // JWT 자동 헤더 전송
+//                    .addNetworkInterceptor(new XAccessTokenInterceptor()) // JWT 자동 헤더 전송
                     .build();
 
             retrofit = new Retrofit.Builder()

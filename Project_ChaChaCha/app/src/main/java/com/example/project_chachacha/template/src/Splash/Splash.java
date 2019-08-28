@@ -3,6 +3,7 @@ package com.example.project_chachacha.template.src.Splash;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -28,4 +29,6 @@ public class Splash extends BaseActivity {
             }
         },1000);
     }
+
+
 }
