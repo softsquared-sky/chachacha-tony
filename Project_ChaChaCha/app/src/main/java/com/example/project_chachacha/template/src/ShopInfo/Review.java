@@ -1,7 +1,5 @@
 package com.example.project_chachacha.template.src.ShopInfo;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.project_chachacha.R;
-import com.example.project_chachacha.template.src.Mypage.review_item;
-import com.example.project_chachacha.template.src.Mypage.reviewlist_adapter;
 
 import java.util.ArrayList;
 

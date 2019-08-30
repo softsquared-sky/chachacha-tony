@@ -1,6 +1,5 @@
 package com.example.project_chachacha.template.src;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Context;

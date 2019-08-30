@@ -1,4 +1,4 @@
-package com.example.project_chachacha.template.src.Mypage;
+package com.example.project_chachacha.template.src.Mypage.Myreview;
 
 public class review_item {
     private int profile;

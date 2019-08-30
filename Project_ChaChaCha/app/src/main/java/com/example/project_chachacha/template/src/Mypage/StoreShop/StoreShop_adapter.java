@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_chachacha.R;
-import com.example.project_chachacha.template.src.Mypage.reviewlist_adapter;
 
 import java.util.ArrayList;
 

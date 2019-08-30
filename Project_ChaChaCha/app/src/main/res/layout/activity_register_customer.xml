@@ -88,47 +88,28 @@
                 android:layout_marginStart="37dp"
                 android:layout_marginBottom="8dp"/>
             <LinearLayout
+                android:id="@+id/userpwline"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
-                <EditText
-                    android:inputType="textPassword"
-                    android:id="@+id/userpw"
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginEnd="27dp"
-                    android:layout_height="48dp"
-                    android:background="@drawable/style3"
-                    android:hint="비밀번호 입력"
-                    android:textSize="14sp"
-                    android:layout_gravity="center"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:orientation="horizontal"
-                android:layout_marginBottom="48dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/style3"
                 android:layout_marginStart="28dp"
                 android:layout_marginEnd="27dp">
                 <EditText
-                    android:singleLine="true"
-                    android:nextFocusDown="@id/name"
-                    android:inputType="textPassword"
-                    android:id="@+id/userpw2"
+                    android:id="@+id/userpw"
                     android:layout_width="wrap_content"
-                    android:layout_weight="1"
                     android:layout_height="48dp"
-                    android:hint="비밀번호 재입력"
-                    android:textSize="14sp"
-                    android:backgroundTint="#00ffffff"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:backgroundTint="#00ffffff"
+                    android:hint="비밀번호 입력"
+                    android:inputType="textPassword"
+                    android:nextFocusDown="@id/userpw2"
                     android:paddingStart="16dp"
-                    android:paddingEnd="16dp"/>
+                    android:paddingEnd="16dp"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -138,6 +119,47 @@
                     android:layout_marginEnd="14dp"
                     android:textColor="#99FF0000"/>
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/userpw2line"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/style3"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="27dp">
+                <EditText
+                    android:id="@+id/userpw2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:backgroundTint="#00ffffff"
+                    android:hint="비밀번호 재입력"
+                    android:inputType="textPassword"
+                    android:nextFocusDown="@id/name"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="필수"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_marginEnd="14dp"
+                    android:textColor="#99FF0000"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/pwcomment"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:textColor="#99FF0000"
+                tools:text="비밀번호가 일치하지 않습니다."
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"

@@ -1,12 +1,10 @@
 package com.example.project_chachacha.template.src.Mypage;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,6 +12,9 @@ import android.widget.ImageView;
 import com.example.project_chachacha.R;
 import com.example.project_chachacha.template.src.BaseActivity;
 import com.example.project_chachacha.template.src.MainChaChaCha.Chachacha;
+import com.example.project_chachacha.template.src.Mypage.MyChaChaCha.MyChaChaCha;
+import com.example.project_chachacha.template.src.Mypage.ProfileEdit.Profile_Edit;
+import com.example.project_chachacha.template.src.Mypage.Search.Search;
 
 public class Mypage extends BaseActivity {
 
@@ -25,10 +26,17 @@ public class Mypage extends BaseActivity {
     private Search _search;
     private MyChaChaCha myChaChaCha;
 
+    private String userid;
+
+//    public static Profile_Edit profile_edit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
+
+        Intent intent = getIntent();
+        userid = intent.getStringExtra("userid");
 
         mivstart = findViewById(R.id.chastart);
         mivstart.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +55,9 @@ public class Mypage extends BaseActivity {
         fragmentManager = getSupportFragmentManager();
 
         mypage_main = new Mypage_main();
+        Bundle bundle = new Bundle();
+        bundle.putString("userid", userid);
+        mypage_main.setArguments(bundle);
         _search = new Search();
         myChaChaCha = new MyChaChaCha();
 
@@ -54,6 +65,18 @@ public class Mypage extends BaseActivity {
         transaction.replace(R.id.frame_layout,mypage_main).commitAllowingStateLoss();
 
     }
+
+//    @Override
+//    public void onBackPressed() { // 리뷰, 저장술집에 대해서도 추가
+//        if(profile_edit!=null){
+//            getSupportFragmentManager().beginTransaction().remove(profile_edit).commit();
+//            profile_edit=null;
+//            replaceFragment(Mypage_main.newInstance());
+//        }
+//        else{
+//            super.onBackPressed();
+//        }
+//    }
 
     public void replaceFragment(Fragment fragment){
         fragmentManager = getSupportFragmentManager();

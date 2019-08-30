@@ -1,4 +1,4 @@
-package com.example.project_chachacha.template.src.Mypage;
+package com.example.project_chachacha.template.src.Mypage.Myreview;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_chachacha.R;
+import com.example.project_chachacha.template.src.Mypage.Mypage;
+import com.example.project_chachacha.template.src.Mypage.Mypage_main;
 
 import java.util.ArrayList;
 

@@ -8,15 +8,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_chachacha.R;
-import com.example.project_chachacha.template.src.Mypage.review_item;
-import com.example.project_chachacha.template.src.Mypage.reviewlist_adapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Shop_review_adapter extends RecyclerView.Adapter<Shop_review_adapter.Shop_review_viewholder> {
 

@@ -20,12 +20,20 @@ public class ApplicationClass extends Application {
     public static MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=uft-8");
     public static MediaType MEDIA_TYPE_JPEG = MediaType.parse("image/jpeg");
 
+    public static String _USERNAME;
+    public static String _COMMENT;
+    public static String _EMAIL;
+    public static String _PHONE;
+    public static String _USERID;
+
     // 테스트 서버 주소
-    public static String BASE_URL = "http://106.10.50.207";
+    public static String BASE_URL = "http://www.so-yo.info";
     // 실서버 주소
 //    public static String BASE_URL = "https://template.softsquared.com/";
 
     public static SharedPreferences sSharedPreferences = null;
+
+    public static SharedPreferences sharedPreferences = null;
 
     // SharedPreferences 키 값
     public static String TAG = "TEMPLATE_APP";
@@ -38,6 +46,7 @@ public class ApplicationClass extends Application {
 
     // Retrofit 인스턴스
     public static Retrofit retrofit;
+    public static Retrofit retrofit2;
 
     @Override
     public void onCreate() {
@@ -45,6 +54,9 @@ public class ApplicationClass extends Application {
 
         if (sSharedPreferences == null) {
             sSharedPreferences = getApplicationContext().getSharedPreferences(TAG, Context.MODE_PRIVATE);
+//            SharedPreferences.Editor editor = sSharedPreferences.edit();
+//            editor.putString("token", X_ACCESS_TOKEN);
+//            editor.commit();
         }
     }
 
@@ -64,5 +76,23 @@ public class ApplicationClass extends Application {
         }
 
         return retrofit;
+    }
+
+    public static Retrofit getRetrofitToken() {
+        if (retrofit2 == null) {
+            OkHttpClient client = new OkHttpClient.Builder()
+                    .readTimeout(5000, TimeUnit.MILLISECONDS)
+                    .connectTimeout(5000, TimeUnit.MILLISECONDS)
+                    .addNetworkInterceptor(new XAccessTokenInterceptor()) // JWT 자동 헤더 전송
+                    .build();
+
+            retrofit2 = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+
+        return retrofit2;
     }
 }

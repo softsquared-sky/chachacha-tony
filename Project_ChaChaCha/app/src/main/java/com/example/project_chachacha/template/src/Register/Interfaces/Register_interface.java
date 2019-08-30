@@ -1,10 +1,6 @@
 package com.example.project_chachacha.template.src.Register.Interfaces;
 
 import com.example.project_chachacha.template.src.Register.models.RegisterResponse;
-import com.example.project_chachacha.template.src.Register.models.Register_boss_data;
-import com.example.project_chachacha.template.src.Register.models.Register_customer_data;
-
-import org.json.JSONObject;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;

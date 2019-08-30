@@ -1,10 +1,10 @@
 package com.example.project_chachacha.template.src.Register;
 
+import android.util.Log;
+
 import com.example.project_chachacha.template.src.Register.Interfaces.RegisterView;
 import com.example.project_chachacha.template.src.Register.Interfaces.Register_interface;
 import com.example.project_chachacha.template.src.Register.models.RegisterResponse;
-import com.example.project_chachacha.template.src.Register.models.Register_boss_data;
-import com.example.project_chachacha.template.src.Register.models.Register_customer_data;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,12 +24,11 @@ public class RegisterService {
         this.mRegisterView = registerView;
     }
 
-    void customer(String userid, String userpw, String userpw2, String name, int age, int gender, String email, String phone){
+    void customer(String userid, String userpw, String name, int age, int gender, String email, String phone){
         JSONObject params = new JSONObject();
         try {
             params.put("userid", userid);
             params.put("userpw", userpw);
-            params.put("userpw2", userpw2);
             params.put("name",name);
             params.put("age", age);
             params.put("gender", gender);
@@ -53,18 +52,17 @@ public class RegisterService {
 
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
-                t.getCause();
+                Log.d("tag", "오류", t.getCause());
                 mRegisterView.validateFailure(0,"응답 실패");
             }
         });
     }
 
-    void boss(String userid, String userpw, String userpw2, String name, String phone){
+    void boss(String userid, String userpw, String name, String phone){
         JSONObject params = new JSONObject();
         try {
             params.put("userid", userid);
             params.put("userpw", userpw);
-            params.put("userpw2", userpw2);
             params.put("name",name);
             params.put("phone", phone);
         } catch (JSONException e) {

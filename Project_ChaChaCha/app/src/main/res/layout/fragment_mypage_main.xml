@@ -167,8 +167,9 @@
                     android:textSize="16sp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="24dp"
-                    android:layout_marginEnd="162dp"/>
+                    android:layout_marginEnd="152dp"/>
                 <ImageView
+                    android:padding="10dp"
                     android:id="@+id/myreview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -190,8 +191,9 @@
                     android:textSize="16sp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="24dp"
-                    android:layout_marginEnd="148dp"/>
+                    android:layout_marginEnd="138dp"/>
                 <ImageView
+                    android:padding="10dp"
                     android:id="@+id/saveshop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

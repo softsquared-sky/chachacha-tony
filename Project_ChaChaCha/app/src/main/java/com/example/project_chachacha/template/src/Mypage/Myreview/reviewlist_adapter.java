@@ -1,4 +1,4 @@
-package com.example.project_chachacha.template.src.Mypage;
+package com.example.project_chachacha.template.src.Mypage.Myreview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
