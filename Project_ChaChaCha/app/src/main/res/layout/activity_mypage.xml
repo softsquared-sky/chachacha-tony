@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     
     <FrameLayout
-        android:id="@+id/frame_layout"
+        android:id="@+id/myPage_frameLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
@@ -12,45 +13,50 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#ffffff"
+        android:background="@color/white"
         android:elevation="10dp">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_map"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            tools:ignore="ContentDescription" />
         <ImageView
             android:onClick="tabClick"
-            android:id="@+id/mychachacha"
+            android:id="@+id/myPage_iv_mychachacha"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_like"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            tools:ignore="ContentDescription" />
         <ImageView
-            android:id="@+id/chastart"
+            android:id="@+id/myPage_iv_chaStart"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_start"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            tools:ignore="ContentDescription" />
         <ImageView
             android:onClick="tabClick"
-            android:id="@+id/search"
+            android:id="@+id/myPage_iv_search"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_msg"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            tools:ignore="ContentDescription" />
         <ImageView
             android:onClick="tabClick"
-            android:id="@+id/page"
+            android:id="@+id/myPage_iv_main"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_mypage"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            tools:ignore="ContentDescription" />
 
     </LinearLayout>
 

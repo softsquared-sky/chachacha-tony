@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginEnd="28dp"
+    android:layout_marginStart="28dp"
+    android:background="@drawable/style_shop"
+    android:layout_marginBottom="10dp">
+
+    <ImageView
+        android:id="@+id/storeShop_iv_backImg"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:src="@drawable/ic_launcher_background"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/image_rounding2">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:id="@+id/shop"
+                android:layout_gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="민혁이네 외국포차"
+                android:textSize="12sp"
+                android:textColor="@color/white"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_yellow_star"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/moodtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textSize="9sp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:lineSpacingExtra="4sp"
+            tools:text="#와인 #새우 #친구와 함께"
+            tools:ignore="SmallSp" />
+        <TextView
+            android:id="@+id/writing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:textSize="9sp"
+            android:textColor="@color/white"
+            android:lineSpacingExtra="4sp"
+            tools:text="좋은 친구와 잔을 부딪히는 횟수와 행복은 비례한다고 생각합니다. "
+            android:layout_marginStart="20dp"
+            tools:ignore="SmallSp" />
+    </LinearLayout>
+</FrameLayout>

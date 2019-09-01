@@ -42,9 +42,15 @@
         android:layout_height="match_parent"
         android:background="#fff1f3">
         <ImageView
+            android:id="@+id/shopimg"
             android:layout_width="match_parent"
             android:layout_height="376dp"
+            android:scaleType="centerCrop"
             android:background="#BEBDBD"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="376dp"
+            android:background="#30000000"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -71,7 +77,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/moodtext"
+                    android:id="@+id/mood"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18.7dp"
@@ -83,6 +89,7 @@
                     tools:text="#조용한 #한잔하기_좋은" />
 
                 <TextView
+                    android:id="@+id/storewriting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18.7dp"

@@ -4,24 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.Register.Register_customer"
+    tools:context=".template.src.Register.RegisterCustomerActivity"
     android:orientation="vertical"
-    android:background="#ffffff">
+    android:background="@color/white">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="horizontal">
+
         <ImageView
-            android:id="@+id/back"
+            android:id="@+id/register_iv_back"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="20dp"
             android:src="@drawable/ic_chevron_left_black_24dp"
-            android:layout_centerVertical="true"/>
+            tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="167dp"
             android:layout_height="24dp"
-            android:text="회원가입"
+            android:text="@string/register_title"
             android:textSize="18sp"
             android:textColor="#222B45"
             android:gravity="center"
@@ -33,7 +34,7 @@
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginBottom="22dp">
             <View
@@ -42,9 +43,9 @@
             <TextView
                 android:layout_width="39dp"
                 android:layout_height="16dp"
-                android:textColor="#222B45"
+                android:textColor="@color/Title_Color"
                 android:textSize="14sp"
-                android:text="아이디"
+                android:text="@string/common_id"
                 android:layout_marginStart="37dp"
                 android:layout_marginBottom="8dp"/>
             <LinearLayout
@@ -56,25 +57,27 @@
                 android:layout_marginEnd="27dp">
                 <EditText
                     android:singleLine="true"
-                    android:nextFocusDown="@id/userpw"
-                    android:id="@+id/userid"
-                    android:layout_width="wrap_content"
+                    android:nextFocusDown="@id/register_edt_userPw"
+                    android:id="@+id/register_edt_userId"
+                    android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="48dp"
-                    android:hint="아이디 입력"
-                    android:backgroundTint="#00ffffff"
+                    android:hint="@string/register_userIdHint"
+                    android:backgroundTint="@color/Transparent"
                     android:textSize="14sp"
                     android:layout_gravity="center"
                     android:paddingStart="16dp"
-                    android:paddingEnd="16dp"/>
+                    android:paddingEnd="16dp"
+                    android:importantForAutofill="no"
+                    android:inputType="text" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="필수"
+                    android:text="@string/register_mandatory"
                     android:textSize="14sp"
                     android:gravity="center"
                     android:layout_marginEnd="14dp"
-                    android:textColor="#99FF0000"/>
+                    android:textColor="@color/Text_Mandatory"/>
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
@@ -83,12 +86,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"
                 android:textSize="14sp"
-                android:text="비밀번호"
-                android:textColor="#222B45"
+                android:text="@string/common_password"
+                android:textColor="@color/Title_Color"
                 android:layout_marginStart="37dp"
                 android:layout_marginBottom="8dp"/>
             <LinearLayout
-                android:id="@+id/userpwline"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:orientation="horizontal"
@@ -97,30 +99,31 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginEnd="27dp">
                 <EditText
-                    android:id="@+id/userpw"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/register_edt_userPw"
+                    android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:backgroundTint="#00ffffff"
-                    android:hint="비밀번호 입력"
+                    android:backgroundTint="@color/Transparent"
+                    android:hint="@string/register_userPwHint"
                     android:inputType="textPassword"
-                    android:nextFocusDown="@id/userpw2"
+                    android:nextFocusDown="@id/register_edt_userPwCheck"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
                     android:singleLine="true"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:importantForAutofill="no" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="필수"
+                    android:text="@string/register_mandatory"
                     android:textSize="14sp"
                     android:gravity="center"
                     android:layout_marginEnd="14dp"
-                    android:textColor="#99FF0000"/>
+                    android:textColor="@color/Text_Mandatory"/>
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/userpw2line"
+                android:id="@+id/register_view_userPwCheck"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:orientation="horizontal"
@@ -129,34 +132,35 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginEnd="27dp">
                 <EditText
-                    android:id="@+id/userpw2"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/register_edt_userPwCheck"
+                    android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:backgroundTint="#00ffffff"
-                    android:hint="비밀번호 재입력"
+                    android:backgroundTint="@color/Transparent"
+                    android:hint="@string/register_userPwCheckHint"
                     android:inputType="textPassword"
-                    android:nextFocusDown="@id/name"
+                    android:nextFocusDown="@id/register_edt_name"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
                     android:singleLine="true"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:importantForAutofill="no" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="필수"
+                    android:text="@string/register_mandatory"
                     android:textSize="14sp"
                     android:gravity="center"
                     android:layout_marginEnd="14dp"
-                    android:textColor="#99FF0000"/>
+                    android:textColor="@color/Text_Mandatory"/>
             </LinearLayout>
 
             <TextView
-                android:id="@+id/pwcomment"
+                android:id="@+id/register_tv_pwComment"
                 android:layout_width="match_parent"
-                android:layout_height="16dp"
-                android:textColor="#99FF0000"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Text_Mandatory"
                 tools:text="비밀번호가 일치하지 않습니다."
                 android:gravity="center"
                 android:layout_marginBottom="16dp"/>
@@ -164,8 +168,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"
                 android:textSize="14sp"
-                android:text="성명"
-                android:textColor="#222B45"
+                android:text="@string/common_name"
+                android:textColor="@color/Title_Color"
                 android:layout_marginStart="37dp"
                 android:layout_marginBottom="8dp"/>
             <LinearLayout
@@ -178,13 +182,13 @@
                 android:layout_marginEnd="27dp">
                 <EditText
                     android:singleLine="true"
-                    android:nextFocusDown="@id/email"
-                    android:id="@+id/name"
-                    android:layout_width="wrap_content"
+                    android:nextFocusDown="@id/register_edt_email"
+                    android:id="@+id/register_edt_name"
+                    android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="48dp"
-                    android:backgroundTint="#00ffffff"
-                    android:hint="이름 입력"
+                    android:backgroundTint="@color/Transparent"
+                    android:hint="@string/register_userNameHint"
                     android:textSize="14sp"
                     android:layout_gravity="center"
                     android:paddingStart="16dp"
@@ -192,18 +196,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="필수"
+                    android:text="@string/register_mandatory"
                     android:textSize="14sp"
                     android:gravity="center"
                     android:layout_marginEnd="14dp"
-                    android:textColor="#99FF0000"/>
+                    android:textColor="@color/Text_Mandatory"/>
             </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"
                 android:textSize="14sp"
-                android:text="이메일"
-                android:textColor="#222B45"
+                android:text="@string/common_email"
+                android:textColor="@color/Title_Color"
                 android:layout_marginStart="37dp"
                 android:layout_marginBottom="8dp"/>
             <LinearLayout
@@ -216,13 +220,13 @@
                 android:layout_marginEnd="27dp">
                 <EditText
                     android:singleLine="true"
-                    android:nextFocusDown="@id/phone"
-                    android:id="@+id/email"
-                    android:layout_width="wrap_content"
+                    android:nextFocusDown="@id/register_edt_phone"
+                    android:id="@+id/register_edt_email"
+                    android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="48dp"
-                    android:backgroundTint="#00ffffff"
-                    android:hint="이메일 입력"
+                    android:backgroundTint="@color/Transparent"
+                    android:hint="@string/register_emailHint"
                     android:textSize="14sp"
                     android:layout_gravity="center"
                     android:paddingStart="16dp"
@@ -230,18 +234,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="필수"
+                    android:text="@string/register_mandatory"
                     android:textSize="14sp"
                     android:gravity="center"
                     android:layout_marginEnd="14dp"
-                    android:textColor="#99FF0000"/>
+                    android:textColor="@color/Text_Mandatory"/>
             </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"
                 android:textSize="14sp"
-                android:text="전화번호"
-                android:textColor="#222B45"
+                android:text="@string/common_phone2"
+                android:textColor="@color/Title_Color"
                 android:layout_marginStart="37dp"
                 android:layout_marginBottom="8dp"/>
             <LinearLayout
@@ -254,12 +258,12 @@
                 android:layout_marginEnd="27dp">
                 <EditText
                     android:singleLine="true"
-                    android:id="@+id/phone"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/register_edt_phone"
+                    android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="48dp"
-                    android:backgroundTint="#00ffffff"
-                    android:hint="'-'구분없이 입력"
+                    android:backgroundTint="@color/Transparent"
+                    android:hint="@string/register_phoneHint"
                     android:textSize="14sp"
                     android:layout_gravity="center"
                     android:paddingStart="16dp"
@@ -267,18 +271,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="필수"
+                    android:text="@string/register_mandatory"
                     android:textSize="14sp"
                     android:gravity="center"
                     android:layout_marginEnd="14dp"
-                    android:textColor="#99FF0000"/>
+                    android:textColor="@color/Text_Mandatory"/>
             </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"
                 android:textSize="14sp"
-                android:text="나이"
-                android:textColor="#222B45"
+                android:text="@string/common_age"
+                android:textColor="@color/Title_Color"
                 android:layout_marginStart="37dp"
                 android:layout_marginBottom="8dp"/>
             <LinearLayout
@@ -291,12 +295,12 @@
                     android:layout_width="27dp"
                     android:layout_height="match_parent"/>
                 <Button
-                    android:id="@+id/age_btn1"
+                    android:id="@+id/register_btn_age1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:background="@drawable/age_button_background"
-                    android:text="20대"
+                    android:text="@string/register_ageBtn1"
                     android:textSize="14sp"
                     android:textColor="@drawable/age_button_color"
                     android:onClick="ageClick"/>
@@ -304,39 +308,39 @@
                     android:layout_width="4dp"
                     android:layout_height="match_parent"/>
                 <Button
-                    android:id="@+id/age_btn2"
+                    android:id="@+id/register_btn_age2"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:textSize="14sp"
                     android:layout_height="match_parent"
                     android:background="@drawable/age_button_background"
-                    android:text="30대"
+                    android:text="@string/register_ageBtn2"
                     android:textColor="@drawable/age_button_color"
                     android:onClick="ageClick"/>
                 <View
                     android:layout_width="4dp"
                     android:layout_height="match_parent"/>
                 <Button
-                    android:id="@+id/age_btn3"
+                    android:id="@+id/register_btn_age3"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:background="@drawable/age_button_background"
                     android:textSize="14sp"
-                    android:text="40대"
+                    android:text="@string/register_ageBtn3"
                     android:textColor="@drawable/age_button_color"
                     android:onClick="ageClick" />
                 <View
                     android:layout_width="4dp"
                     android:layout_height="match_parent"/>
                 <Button
-                    android:id="@+id/age_btn4"
+                    android:id="@+id/register_age_btn4"
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="match_parent"
                     android:background="@drawable/age_button_background"
                     android:textSize="14sp"
-                    android:text="50대 이상"
+                    android:text="@string/register_ageBtn4"
                     android:textColor="@drawable/age_button_color"
                     android:onClick="ageClick"/>
                 <View
@@ -347,8 +351,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="16dp"
                 android:textSize="14sp"
-                android:text="성별"
-                android:textColor="#222B45"
+                android:text="@string/common_gender"
+                android:textColor="@color/Title_Color"
                 android:layout_marginStart="37dp"
                 android:layout_marginBottom="8dp"/>
             <LinearLayout
@@ -360,27 +364,27 @@
                     android:layout_width="27dp"
                     android:layout_height="match_parent"/>
                 <Button
-                    android:id="@+id/gender_woman"
+                    android:id="@+id/register_btn_genderWoman"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:background="@drawable/age_button_background"
                     android:layout_height="match_parent"
                     android:textSize="14sp"
                     android:textColor="@drawable/age_button_color"
-                    android:text="여"
+                    android:text="@string/register_genderWoman"
                     android:onClick="genderClick"/>
                 <View
                     android:layout_width="8dp"
                     android:layout_height="match_parent"/>
                 <Button
-                    android:id="@+id/gender_man"
+                    android:id="@+id/register_btn_genderMan"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:background="@drawable/age_button_background"
                     android:textColor="@drawable/age_button_color"
                     android:textSize="14sp"
-                    android:text="남"
+                    android:text="@string/register_genderMan"
                     android:onClick="genderClick"/>
                 <View
                     android:layout_width="27dp"
@@ -390,10 +394,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <Button
-                    android:id="@+id/next"
+                    android:id="@+id/register_btn_next"
                     android:layout_width="160dp"
                     android:layout_height="48dp"
-                    android:text="다음"
+                    android:text="@string/common_next"
                     android:textSize="14sp"
                     android:textColor="#ffffff"
                     android:textStyle="bold"

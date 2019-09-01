@@ -1,17 +1,14 @@
 package com.example.project_chachacha.template.src.Splash;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.project_chachacha.R;
 import com.example.project_chachacha.template.src.BaseActivity;
-import com.example.project_chachacha.template.src.Login.Login;
-import com.example.project_chachacha.template.src.Mypage.Mypage;
+import com.example.project_chachacha.template.src.Login.LoginActivity;
+import com.example.project_chachacha.template.src.Mypage.MypageActivity;
 
 public class Splash extends BaseActivity {
 
@@ -33,8 +30,8 @@ public class Splash extends BaseActivity {
             editor.commit(); // 화면이 자동로그인으로 넘어왔는지 로그인에서 넘어왔는지 체크
             handler.postDelayed(new Runnable() {
                 @Override
-                public void run() {
-                    Intent intent = new Intent(Splash.this, Mypage.class);
+                public void run() { // 서버와 통신, 자동로그인할때
+                    Intent intent = new Intent(Splash.this, MypageActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -48,7 +45,7 @@ public class Splash extends BaseActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(Splash.this, Login.class);
+                    Intent intent = new Intent(Splash.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                 }

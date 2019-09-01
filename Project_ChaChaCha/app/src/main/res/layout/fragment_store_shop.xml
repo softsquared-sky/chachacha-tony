@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".template.src.Mypage.StoreShop.StoreShop"
+    tools:context=".template.src.Mypage.StoreShop.StoreShopFragment"
     android:orientation="vertical"
     android:background="#ffffff">
 
@@ -12,18 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="horizontal"
-        android:layout_marginBottom="8dp">
+        android:layout_marginBottom="15dp">
         <ImageView
-            android:id="@+id/back"
+            android:id="@+id/storeShop_iv_back"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="20dp"
             android:src="@drawable/ic_chevron_left_black_24dp"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="167dp"
             android:layout_height="24dp"
-            android:text="저장한 술집"
+            android:text="@string/storeShop_title"
             android:lineSpacingExtra="4sp"
             android:textSize="18sp"
             android:textColor="#222B45"
@@ -33,7 +34,7 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_store_shop"
+        android:id="@+id/storeShop_rv_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

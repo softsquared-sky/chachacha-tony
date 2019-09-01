@@ -1,6 +1,77 @@
 <resources>
     <string name="app_name">Project_ChaChaCha</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: Common -->
+    <string name="common_id">아이디</string>
+    <string name="common_password">비밀번호</string>
+    <string name="common_email">이메일</string>
+    <string name="common_phone">연락처</string>
+    <string name="common_phone2">전화번호</string>
+    <string name="common_name">성명</string>
+    <string name="common_age">나이</string>
+    <string name="common_gender">성별</string>
+    <string name="common_next">다음</string>
+    <!--TODO: Login -->
+    <string name="login_autoLogin">로그인 상태를 유지하시겠습니까?</string>
+    <string name="login_doLogin">로그인</string>
+    <string name="login_askRegister">아직 아이디가 없으신가요?</string>
+    <string name="login_register">회원가입 하기</string>
+    <!--TODO: MypageMain -->
+    <string name="mypageMain_title">마이 페이지</string>
+    <string name="mypageMain_name">님</string>
+    <string name="mypageMain_registerDay">가입일자</string>
+    <string name="mypageMain_review">마이 리뷰보기</string>
+    <string name="mypageMain_storeShop">저장한 술집보기</string>
+    <string name="mypageMain_edit">수정하기</string>
+    <string name="mypageMain_about">About 차차차</string>
+    <string name="mypageMain_info">공지사항</string>
+    <string name="mypageMain_ask">광고 문의</string>
+    <string name="mypageMain_logout">로그아웃 할게요!</string>
+    <!--TODO: Register -->
+    <string name="register_title">회원가입</string>
+    <string name="register_mandatory">필수</string>
+    <string name="register_userIdHint">아이디 입력</string>
+    <string name="register_userPwHint">비밀번호 입력</string>
+    <string name="register_userPwCheckHint">비밀번호 재입력</string>
+    <string name="register_userNameHint">이름 입력</string>
+    <string name="register_emailHint">이메일 입력</string>
+    <string name="register_phoneHint">\'-\'구분없이 입력</string>
+    <string name="register_ageBtn1">20대</string>
+    <string name="register_ageBtn2">30대</string>
+    <string name="register_ageBtn3">40대</string>
+    <string name="register_ageBtn4">50대 이상</string>
+    <string name="register_genderWoman">여</string>
+    <string name="register_genderMan">남</string>
+    <!--TODO: ProfileEdit -->
+    <string name="profile_title">프로필 수정</string>
+    <string name="profile_complete">완료</string>
+    <string name="profile_writing">소개글</string>
+    <!--TODO: MyReview -->
+    <string name="myreview_title">마이 리뷰</string>
+    <!--TODO: StoreShop -->
+    <string name="storeShop_title">저장한 술집</string>
+    <!--TODO: Search -->
+    <string name="search_title">검색</string>
+    <!--TODO: MyChaChaCha -->
+    <string name="myChaChaCha_title">마이 차차차</string>
+    <!--TODO: ChaChaCha -->
+    <string name="chachacha_title">차차차 START</string>
+    <string name="chachacha_askNum">몇명이야?</string>
+    <string name="chachacha_num1">1~2명</string>
+    <string name="chachacha_num2">3~5명</string>
+    <string name="chachacha_num3">6~10명</string>
+    <string name="chachacha_num4">11~20명</string>
+    <string name="chachacha_num5">21~30명</string>
+    <string name="chachacha_num6">30명 이상</string>
+    <string name="chachacha_askShop">어떤 술집 가고싶어?</string>
+    <string name="chachacha_askMood">분위기는?</string>
+    <string name="chachacha_mood1">#자유로운</string>
+    <string name="chachacha_mood2">#편안한</string>
+    <string name="chachacha_mood3">#어두운</string>
+    <string name="chachacha_mood4">#아늑한</string>
+    <string name="chachacha_mood5">#활기찬</string>
+    <string name="chachacha_mood6">#조용한</string>
+    <string name="chachacha_mood7">#데이트하기 좋은</string>
+    <string name="chachacha_mood8">상관없음</string>
+
 </resources>

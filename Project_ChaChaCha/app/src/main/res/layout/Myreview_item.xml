@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="28dp"
+    android:layout_marginEnd="28dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/myreview_item_iv_profileImg"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="top"
+            android:src="@drawable/ic_launcher_foreground"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/gray"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="16dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="6dp">
+                <TextView
+                    android:id="@+id/myreview_tv_shopName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    tools:text="가게이름"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="8dp"/>
+                <ImageView
+                    android:id="@+id/myreview_iv_rate1"
+                    android:layout_width="13dp"
+                    android:layout_gravity="bottom"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_yellow_star"
+                    tools:ignore="ContentDescription" />
+                <ImageView
+                    android:id="@+id/myreview_iv_rate2"
+                    android:layout_width="13dp"
+                    android:layout_gravity="bottom"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_yellow_star"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/myreview_iv_rate3"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/ic_yellow_star"
+                    tools:ignore="ContentDescription" />
+                <ImageView
+                    android:id="@+id/myreview_iv_rate4"
+                    android:layout_gravity="bottom"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_yellow_star"
+                    tools:ignore="ContentDescription" />
+                <ImageView
+                    android:id="@+id/myreview_iv_rate5"
+                    android:layout_gravity="bottom"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/ic_yellow_star"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/myreview_tv_shopAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="10sp"
+                tools:text="가게 주소"
+                android:layout_marginBottom="13dp"
+                tools:ignore="SmallSp" />
+            <TextView
+                android:id="@+id/myreview_tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                tools:text="abcdefg"
+                android:textSize="10sp"
+                android:lineSpacingExtra="3sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="15.5dp"
+                tools:ignore="SmallSp" />
+    </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/main"/>
+</LinearLayout>

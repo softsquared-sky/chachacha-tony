@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Result {
     @SerializedName("jwt")
-    String jwt;
+    private String jwt;
 
     public String getJwt() {
         return jwt;

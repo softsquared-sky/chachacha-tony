@@ -3,23 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.Mypage.Search.Search"
+    tools:context=".template.src.Mypage.Search.SearchFragment"
     android:orientation="vertical"
-    android:background="#ffffff">
+    android:background="@color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="horizontal"
-        android:background="#ffffff"
+        android:background="@color/white"
         android:elevation="10dp"
         android:layout_marginBottom="5dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="24dp"
-            android:text="검색"
+            android:text="@string/search_title"
             android:textSize="18sp"
-            android:textColor="#222B45"
+            android:textColor="@color/Title_Color"
             android:gravity="center"
             android:textStyle="bold"
             android:layout_centerInParent="true"/>
@@ -38,16 +38,18 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:hint="검색"
+            android:hint="@string/search_title"
             android:textSize="12sp"
-            android:textColor="#656565"
-            android:backgroundTint="#00ffffff" />
+            android:textColor="@color/gray"
+            android:backgroundTint="@color/Transparent"
+            tools:ignore="Autofill,RtlSymmetry,TextFields" />
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="25dp"
-            android:src="@drawable/ic_search_black_24dp"/>
+            android:src="@drawable/ic_search_black_24dp"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
 
 </LinearLayout>

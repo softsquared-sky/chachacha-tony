@@ -20,11 +20,11 @@ public class ApplicationClass extends Application {
     public static MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=uft-8");
     public static MediaType MEDIA_TYPE_JPEG = MediaType.parse("image/jpeg");
 
-    public static String _USERNAME;
-    public static String _COMMENT;
-    public static String _EMAIL;
-    public static String _PHONE;
-    public static String _USERID;
+    public static String USERNAME;
+    public static String COMMENT;
+    public static String EMAIL;
+    public static String PHONE;
+    public static String USERID;
 
     // 테스트 서버 주소
     public static String BASE_URL = "http://www.so-yo.info";

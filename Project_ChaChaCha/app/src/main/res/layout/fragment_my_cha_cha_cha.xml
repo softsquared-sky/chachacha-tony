@@ -3,23 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.Mypage.MyChaChaCha.MyChaChaCha"
+    tools:context=".template.src.Mypage.MyChaChaCha.MyChaChaChaFragment"
     android:orientation="vertical"
-    android:background="#ffffff">
+    android:background="@color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="horizontal"
-        android:background="#ffffff"
+        android:background="@color/white"
         android:elevation="10dp"
         android:layout_marginBottom="5dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="24dp"
-            android:text="마이 차차차"
+            android:text="@string/myChaChaCha_title"
             android:textSize="18sp"
-            android:textColor="#222B45"
+            android:textColor="@color/Title_Color"
             android:gravity="center"
             android:textStyle="bold"
             android:layout_centerInParent="true"/>

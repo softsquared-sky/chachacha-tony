@@ -1,6 +1,5 @@
 package com.example.project_chachacha.template.src.Login.models;
 
-import com.example.project_chachacha.template.src.Register.models.RegisterResponse;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginResponse {

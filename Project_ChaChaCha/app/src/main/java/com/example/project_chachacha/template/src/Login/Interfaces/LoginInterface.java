@@ -10,5 +10,5 @@ import retrofit2.http.POST;
 public interface LoginInterface {
 
     @POST("/token")
-    Call<LoginResponse> PostLogin(@Body RequestBody params);
+    Call<LoginResponse> postLogin(@Body RequestBody params);
 }

@@ -5,8 +5,8 @@ import android.util.Log;
 import com.example.project_chachacha.template.src.Login.Interfaces.LoginInterface;
 import com.example.project_chachacha.template.src.Login.Interfaces.LoginView;
 import com.example.project_chachacha.template.src.Login.models.LoginResponse;
-import com.google.gson.JsonObject;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -22,39 +22,39 @@ public class LoginService {
 
     private final LoginView mLoginView;
 
-    LoginService(final LoginView loginView){
+    LoginService(final LoginView loginView) {
         this.mLoginView = loginView;
     }
 
-    void getLogin(String userid, String userpw){
+    void postLogin(String userid, String userpw) {
         JSONObject params = new JSONObject();
         try {
             params.put("userid", userid);
             params.put("userpw", userpw);
         } catch (JSONException e) {
-            e.printStackTrace();
+            mLoginView.validateFailure(-1, "ID와 비밀번호를 올바르게 입력해주세요.");
+            return;
         }
 
         final LoginInterface mLoginInterface = getRetrofit().create(LoginInterface.class);
-        mLoginInterface.PostLogin(RequestBody.create(params.toString(),MEDIA_TYPE_JSON)).enqueue(new Callback<LoginResponse>() {
+        mLoginInterface.postLogin(RequestBody.create(params.toString(), MEDIA_TYPE_JSON)).enqueue(new Callback<LoginResponse>() {
             @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+            public void onResponse(@NotNull Call<LoginResponse> call, @NotNull Response<LoginResponse> response) {
                 final LoginResponse loginResponse = response.body();
-                if(loginResponse==null){
+                if (loginResponse == null) {
                     mLoginView.validateFailure(0, "response null");
 
                     return;
                 }
-                if(loginResponse.getCode()==113){
+                if (loginResponse.getCode() == 113) {
                     mLoginView.validateSuccess(loginResponse.getCode(), loginResponse.getMessage(), loginResponse.getResult().getJwt());
-                }
-                else{
+                } else {
                     mLoginView.validateFailure(loginResponse.getCode(), loginResponse.getMessage());
                 }
             }
 
             @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
+            public void onFailure(@NotNull Call<LoginResponse> call, @NotNull Throwable t) {
                 Log.d("tag", "오류", t.getCause());
                 t.getCause();
                 mLoginView.validateFailure(0, "로그인 response fail");

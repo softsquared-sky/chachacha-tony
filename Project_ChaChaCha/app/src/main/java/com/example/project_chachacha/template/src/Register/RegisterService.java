@@ -6,6 +6,7 @@ import com.example.project_chachacha.template.src.Register.Interfaces.RegisterVi
 import com.example.project_chachacha.template.src.Register.Interfaces.Register_interface;
 import com.example.project_chachacha.template.src.Register.models.RegisterResponse;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,14 +18,14 @@ import retrofit2.Response;
 import static com.example.project_chachacha.template.src.ApplicationClass.MEDIA_TYPE_JSON;
 import static com.example.project_chachacha.template.src.ApplicationClass.getRetrofit;
 
-public class RegisterService {
+class RegisterService {
     private final RegisterView mRegisterView;
 
     RegisterService(final RegisterView registerView){
         this.mRegisterView = registerView;
     }
 
-    void customer(String userid, String userpw, String name, int age, int gender, String email, String phone){
+    void postCustomer(String userid, String userpw, String name, int age, int gender, String email, String phone){
         JSONObject params = new JSONObject();
         try {
             params.put("userid", userid);
@@ -40,7 +41,7 @@ public class RegisterService {
         final Register_interface register_interface = getRetrofit().create(Register_interface.class);
         register_interface.post_register_customer(RequestBody.create(params.toString(),MEDIA_TYPE_JSON)).enqueue(new Callback<RegisterResponse>() {
             @Override
-            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+            public void onResponse(@NotNull Call<RegisterResponse> call, @NotNull Response<RegisterResponse> response) {
                 final RegisterResponse registerResponse = response.body();
                 if(registerResponse == null){
                     mRegisterView.validateFailure(0,"response fail");
@@ -51,14 +52,14 @@ public class RegisterService {
             }
 
             @Override
-            public void onFailure(Call<RegisterResponse> call, Throwable t) {
+            public void onFailure(@NotNull Call<RegisterResponse> call, @NotNull Throwable t) {
                 Log.d("tag", "오류", t.getCause());
                 mRegisterView.validateFailure(0,"응답 실패");
             }
         });
     }
 
-    void boss(String userid, String userpw, String name, String phone){
+    void postBoss(String userid, String userpw, String name, String phone){
         JSONObject params = new JSONObject();
         try {
             params.put("userid", userid);
@@ -71,7 +72,7 @@ public class RegisterService {
         final Register_interface register_interface2 = getRetrofit().create(Register_interface.class);
         register_interface2.post_register_boss(RequestBody.create(params.toString(),MEDIA_TYPE_JSON)).enqueue(new Callback<RegisterResponse>() {
             @Override
-            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+            public void onResponse(@NotNull Call<RegisterResponse> call, @NotNull Response<RegisterResponse> response) {
                 final RegisterResponse registerResponse2 = response.body();
                 if(registerResponse2 == null){
                     mRegisterView.validateFailure(0,"response fail");
@@ -82,7 +83,7 @@ public class RegisterService {
             }
 
             @Override
-            public void onFailure(Call<RegisterResponse> call, Throwable t) {
+            public void onFailure(@NotNull Call<RegisterResponse> call, @NotNull Throwable t) {
                 mRegisterView.validateFailure(0,"응답 실패");
             }
         });

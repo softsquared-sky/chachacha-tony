@@ -1,18 +1,15 @@
 package com.example.project_chachacha.template.src.ShopInfo;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.project_chachacha.R;
 import com.example.project_chachacha.template.src.BaseActivity;
-import com.example.project_chachacha.template.src.Mypage.Mypage_main;
 
 public class ShopInfo extends BaseActivity {
 

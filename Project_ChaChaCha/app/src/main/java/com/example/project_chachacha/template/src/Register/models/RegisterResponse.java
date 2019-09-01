@@ -12,9 +12,7 @@ public class RegisterResponse {
     @SerializedName("message")
     private String message;
 
-    public String getIsSuccess() {
-        return isSuccess;
-    }
+    public String getIsSuccess() { return isSuccess; }
 
     public int getCode() {
         return code;

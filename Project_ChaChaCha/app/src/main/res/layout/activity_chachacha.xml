@@ -4,26 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.MainChaChaCha.Chachacha"
+    tools:context=".template.src.MainChaChaCha.ChaChaChaSelect.ChachachaActivity"
     android:orientation="vertical"
-    android:background="#ffffff">
+    android:background="@color/white">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="horizontal"
         android:layout_marginBottom="34dp">
         <ImageView
+            android:id="@+id/chachacha_iv_back"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="20dp"
             android:src="@drawable/ic_chevron_left_black_24dp"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="167dp"
             android:layout_height="24dp"
-            android:text="차차차 START"
+            android:text="@string/chachacha_title"
             android:textSize="18sp"
-            android:textColor="#222B45"
+            android:textColor="@color/Title_Color"
             android:lineSpacingExtra="4dp"
             android:gravity="center"
             android:textStyle="bold"
@@ -35,15 +37,15 @@
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textColor="#4a4a4a"
-                android:text="몇명이야?"
+                android:textColor="@color/Title_Color"
+                android:text="@string/chachacha_askNum"
                 android:layout_marginStart="21.3dp"
                 android:layout_marginBottom="8dp" />
 
@@ -63,7 +65,7 @@
                     android:layout_height="55.3dp"
                     android:background="@drawable/age_button_background"
                     android:textColor="@drawable/age_button_color"
-                    android:text="1~2명"
+                    android:text="@string/chachacha_num1"
                     android:textSize="12sp" />
                 <View
                     android:layout_width="7.3dp"
@@ -76,7 +78,7 @@
                     android:layout_height="55.3dp"
                     android:background="@drawable/age_button_background"
                     android:textColor="@drawable/age_button_color"
-                    android:text="3~5명"
+                    android:text="@string/chachacha_num2"
                     android:textSize="12sp" />
                 <View
                     android:layout_width="18.7dp"
@@ -98,7 +100,7 @@
                     android:layout_height="55.3dp"
                     android:background="@drawable/age_button_background"
                     android:textColor="@drawable/age_button_color"
-                    android:text="6~10명"
+                    android:text="@string/chachacha_num3"
                     android:textSize="12sp" />
                 <View
                     android:layout_width="7.3dp"
@@ -111,7 +113,7 @@
                     android:layout_height="55.3dp"
                     android:background="@drawable/age_button_background"
                     android:textColor="@drawable/age_button_color"
-                    android:text="11~20명"
+                    android:text="@string/chachacha_num4"
                     android:textSize="12sp" />
                 <View
                     android:layout_width="18.7dp"
@@ -133,7 +135,7 @@
                     android:layout_height="55.3dp"
                     android:background="@drawable/age_button_background"
                     android:textColor="@drawable/age_button_color"
-                    android:text="21~30명"
+                    android:text="@string/chachacha_num5"
                     android:textSize="12sp" />
                 <View
                     android:layout_width="7.3dp"
@@ -146,7 +148,7 @@
                     android:layout_height="55.3dp"
                     android:background="@drawable/age_button_background"
                     android:textColor="@drawable/age_button_color"
-                    android:text="30명 이상"
+                    android:text="@string/chachacha_num6"
                     android:textSize="12sp" />
                 <View
                     android:layout_width="18.7dp"
@@ -156,10 +158,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textColor="#222b45"
+                android:textColor="@color/Title_Color"
                 android:lineSpacingExtra="4sp"
                 android:gravity="center_horizontal"
-                android:text="어떤 술집 가고싶어?"
+                android:text="@string/chachacha_askShop"
                 android:layout_marginStart="21.3dp"
                 android:layout_marginBottom="7.3dp"/>
 
@@ -178,9 +180,10 @@
                     android:padding="1dp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
+                    android:layout_height="115dp"
                     android:src="@drawable/bar"
-                    android:scaleType="fitXY" />
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
@@ -192,8 +195,9 @@
                     android:src="@drawable/big"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
-                    android:scaleType="fitXY"/>
+                    android:layout_height="115dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
@@ -214,9 +218,10 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
+                    android:layout_height="115dp"
                     android:src="@drawable/ic_pizza"
-                    android:scaleType="fitXY" />
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
@@ -228,8 +233,9 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
-                    android:scaleType="fitXY"/>
+                    android:layout_height="115dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
@@ -249,9 +255,10 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
+                    android:layout_height="115dp"
                     android:src="@drawable/ic_meat"
-                    android:scaleType="fitXY" />
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
@@ -263,8 +270,9 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
-                    android:scaleType="fitXY"/>
+                    android:layout_height="115dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
@@ -284,9 +292,10 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
+                    android:layout_height="115dp"
                     android:src="@drawable/ic_fish"
-                    android:scaleType="fitXY" />
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
@@ -298,8 +307,9 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
-                    android:scaleType="fitXY"/>
+                    android:layout_height="115dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
@@ -319,9 +329,10 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
+                    android:layout_height="115dp"
                     android:src="@drawable/ic_zip"
-                    android:scaleType="fitXY" />
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
@@ -333,8 +344,9 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
-                    android:scaleType="fitXY"/>
+                    android:layout_height="115dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
@@ -354,9 +366,10 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
+                    android:layout_height="115dp"
                     android:src="@drawable/ic_hop"
-                    android:scaleType="fitXY" />
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
@@ -368,8 +381,9 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
-                    android:scaleType="fitXY"/>
+                    android:layout_height="115dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
@@ -389,9 +403,10 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
+                    android:layout_height="115dp"
                     android:src="@drawable/ic_bap"
-                    android:scaleType="fitXY" />
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
@@ -403,8 +418,9 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
-                    android:scaleType="fitXY"/>
+                    android:layout_height="115dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
@@ -424,9 +440,10 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
+                    android:layout_height="115dp"
                     android:src="@drawable/ic_korea"
-                    android:scaleType="fitXY" />
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="10dp"
                     android:layout_height="match_parent"/>
@@ -438,8 +455,9 @@
                     android:background="@drawable/food_background"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="92.7dp"
-                    android:scaleType="fitXY"/>
+                    android:layout_height="115dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
@@ -448,9 +466,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textColor="#4a4a4a"
+                android:textColor="@color/Title_Color"
                 android:layout_marginStart="21.3dp"
-                android:text="분위기는?"
+                android:text="@string/chachacha_askMood"
                 android:layout_marginBottom="8dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -467,9 +485,9 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="55.3dp"
-                    android:text="#자유로운"
+                    android:text="@string/chachacha_mood1"
                     android:textSize="12sp"
-                    android:textColor="#ffffff"/>
+                    android:textColor="@color/white"/>
                 <View
                     android:layout_width="7.3dp"
                     android:layout_height="match_parent"/>
@@ -480,9 +498,9 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="55.3dp"
-                    android:text="#편안한"
+                    android:text="@string/chachacha_mood2"
                     android:textSize="12sp"
-                    android:textColor="#ffffff"/>
+                    android:textColor="@color/white"/>
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
@@ -502,9 +520,9 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="55.3dp"
-                    android:text="#어두운"
+                    android:text="@string/chachacha_mood3"
                     android:textSize="12sp"
-                    android:textColor="#ffffff"/>
+                    android:textColor="@color/white"/>
                 <View
                     android:layout_width="7.3dp"
                     android:layout_height="match_parent"/>
@@ -515,9 +533,9 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="55.3dp"
-                    android:text="#아늑한"
+                    android:text="@string/chachacha_mood4"
                     android:textSize="12sp"
-                    android:textColor="#ffffff"/>
+                    android:textColor="@color/white"/>
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
@@ -537,9 +555,9 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="55.3dp"
-                    android:text="#활기찬"
+                    android:text="@string/chachacha_mood5"
                     android:textSize="12sp"
-                    android:textColor="#ffffff"/>
+                    android:textColor="@color/white"/>
                 <View
                     android:layout_width="7.3dp"
                     android:layout_height="match_parent"/>
@@ -550,9 +568,9 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="55.3dp"
-                    android:text="#조용한"
+                    android:text="@string/chachacha_mood6"
                     android:textSize="12sp"
-                    android:textColor="#ffffff"/>
+                    android:textColor="@color/white"/>
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
@@ -572,9 +590,9 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="55.3dp"
-                    android:text="#데이트하기 좋은"
+                    android:text="@string/chachacha_mood7"
                     android:textSize="12sp"
-                    android:textColor="#ffffff"/>
+                    android:textColor="@color/white"/>
                 <View
                     android:layout_width="7.3dp"
                     android:layout_height="match_parent"/>
@@ -585,19 +603,19 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="55.3dp"
-                    android:text="상관없음"
+                    android:text="@string/chachacha_mood8"
                     android:textSize="12sp"
-                    android:textColor="#ffffff"/>
+                    android:textColor="@color/white"/>
                 <View
                     android:layout_width="18.7dp"
                     android:layout_height="match_parent"/>
             </LinearLayout>
             
             <Button
-                android:id="@+id/next"
+                android:id="@+id/chachacha_btn_next"
                 android:layout_width="145dp"
                 android:layout_height="42dp"
-                android:text="다음"
+                android:text="@string/common_next"
                 android:textColor="#ffffff"
                 android:textSize="15sp"
                 android:layout_gravity="center"

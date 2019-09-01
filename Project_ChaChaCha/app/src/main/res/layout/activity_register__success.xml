@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.Register.Register_Success"
+    tools:context=".template.src.Register.RegisterSuccessActivity"
     android:orientation="vertical"
     android:background="#FF7889">
     <View
@@ -27,7 +27,7 @@
         android:textSize="16dp"
         android:layout_marginBottom="134dp"/>
     <Button
-        android:id="@+id/goto_login"
+        android:id="@+id/registerSuccess_btn_login"
         android:layout_width="160dp"
         android:layout_height="48dp"
         android:background="@drawable/style5"
