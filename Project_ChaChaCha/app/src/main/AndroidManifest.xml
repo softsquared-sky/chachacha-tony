@@ -18,17 +18,17 @@
         <activity android:name=".template.src.Register.RegisterSelectActivity" />
         <activity android:name=".template.src.Register.RegisterBossActivity" />
         <activity android:name=".template.src.MyChaShopDetail.WriteReview" />
-        <activity android:name=".template.src.MyChaShopDetail.Cha_Shop_Detail" />
+        <activity android:name=".template.src.MyChaShopDetail.MyChaShopDetail" />
         <activity android:name=".template.src.MainChaChaCha.ChaChaChaList.ChaChaChaListActivity" />
-        <activity android:name=".template.src.ShopInfo.ShopInfo" />
-        <activity android:name=".template.src.Shopdetatil.ShopDetail" />
+        <activity android:name=".template.src.ShopInfo.ShopInfoActivity" />
+        <activity android:name=".template.src.Shopdetatil.ShopDetailActivity" />
         <activity android:name=".template.src.MainChaChaCha.ChaChaChaSelect.ChachachaActivity" />
         <activity android:name=".template.src.Mypage.MypageActivity">
         </activity>
         <activity android:name=".template.src.Register.RegisterSuccessActivity" />
         <activity android:name=".template.src.Register.RegisterCustomerActivity" />
         <activity android:name=".template.src.Login.LoginActivity" />
-        <activity android:name=".template.src.Splash.Splash">
+        <activity android:name=".template.src.Splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

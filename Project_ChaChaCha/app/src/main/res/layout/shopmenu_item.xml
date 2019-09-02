@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+    <TextView
+        android:id="@+id/shopmenu_item_tv_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="음식이름"
+        android:textSize="13sp"
+        android:textColor="@color/black"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shopmenu_item_tv_price"
+        tools:text="10000원"
+        android:textSize="13sp"
+        android:textColor="@color/black" />
+</LinearLayout>

@@ -13,16 +13,16 @@ import com.example.project_chachacha.template.src.Login.LoginActivity;
 
 public class RegisterSelectActivity extends AppCompatActivity {
 
-    private ImageView mivback;
-    private Button btn1, btn2; // 임시
+    private ImageView mIvBack, mIvBoss, mIvGuest;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_select);
 
-        mivback = findViewById(R.id.back);
-        mivback.setOnClickListener(new View.OnClickListener() {
+        mIvBack = findViewById(R.id.back);
+        mIvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RegisterSelectActivity.this, LoginActivity.class);
@@ -31,8 +31,8 @@ public class RegisterSelectActivity extends AppCompatActivity {
             }
         });
 
-        btn1 = findViewById(R.id.boss);
-        btn1.setOnClickListener(new View.OnClickListener() {
+        mIvBoss = findViewById(R.id.registerSelect_iv_boss);
+        mIvBoss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RegisterSelectActivity.this, RegisterBossActivity.class);
@@ -41,8 +41,8 @@ public class RegisterSelectActivity extends AppCompatActivity {
             }
         });
 
-        btn2 = findViewById(R.id.guest);
-        btn2.setOnClickListener(new View.OnClickListener() {
+        mIvGuest = findViewById(R.id.registerSelect_iv_guest);
+        mIvGuest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(RegisterSelectActivity.this, RegisterCustomerActivity.class);

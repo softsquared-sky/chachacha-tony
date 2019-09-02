@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import com.example.project_chachacha.R;
 import com.example.project_chachacha.template.src.BaseActivity;
 import com.example.project_chachacha.template.src.Mypage.MypageActivity;
-import com.example.project_chachacha.template.src.Shopdetatil.ShopDetail;
+import com.example.project_chachacha.template.src.Shopdetatil.ShopDetailActivity;
 
 public class ChachachaActivity extends BaseActivity {
 
@@ -46,7 +46,7 @@ public class ChachachaActivity extends BaseActivity {
         mBtnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ChachachaActivity.this, ShopDetail.class);
+                Intent intent = new Intent(ChachachaActivity.this, ShopDetailActivity.class);
                 startActivity(intent);
             }
         });
@@ -76,6 +76,24 @@ public class ChachachaActivity extends BaseActivity {
         mBtnFood14 = findViewById(R.id.food14);
         mBtnFood15 = findViewById(R.id.food15);
         mBtnFood16 = findViewById(R.id.food16);
+        mBtnFood1.setClipToOutline(true);
+        mBtnFood2.setClipToOutline(true);
+        mBtnFood3.setClipToOutline(true);
+        mBtnFood4.setClipToOutline(true);
+        mBtnFood5.setClipToOutline(true);
+        mBtnFood6.setClipToOutline(true);
+        mBtnFood7.setClipToOutline(true);
+        mBtnFood8.setClipToOutline(true);
+        mBtnFood9.setClipToOutline(true);
+        mBtnFood10.setClipToOutline(true);
+        mBtnFood11.setClipToOutline(true);
+        mBtnFood12.setClipToOutline(true);
+        mBtnFood13.setClipToOutline(true);
+        mBtnFood14.setClipToOutline(true);
+        mBtnFood15.setClipToOutline(true);
+        mBtnFood16.setClipToOutline(true);
+
+
 
     }
 

@@ -1,44 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".template.src.MyChaShopDetail.WriteReview"
     android:orientation="vertical"
-    android:background="#ffffff">
+    android:background="@color/white">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:orientation="horizontal"
         android:layout_marginBottom="12dp">
         <ImageView
-            android:id="@+id/back"
+            android:id="@+id/writeReview_iv_back"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="20dp"
             android:src="@drawable/ic_chevron_left_black_24dp"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            tools:ignore="ContentDescription" />
         <TextView
+            android:id="@+id/writeReview_tv_title"
             android:layout_width="167dp"
             android:layout_height="24dp"
-            android:text="가게이름"
+            tools:text="가게이름"
             android:textSize="18sp"
-            android:textColor="#222B45"
+            android:textColor="@color/Title_Color"
             android:gravity="center"
             android:textStyle="bold"
             android:layout_centerInParent="true"/>
         <TextView
-            android:id="@+id/commit"
+            android:id="@+id/writeReview_tv_commit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:text="작성"
+            android:text="@string/writeReview_commit"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="22dp"/>
+            android:layout_marginEnd="22dp"
+            tools:ignore="RelativeOverlap" />
     </RelativeLayout>
 
     <LinearLayout
@@ -47,18 +49,16 @@
         android:layout_gravity="center_horizontal"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/btn_menu"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="리뷰작성"
+            android:text="@string/writeReview_write"
             android:gravity="center"
             android:textSize="14sp"
-            android:textColor="#ff7889"/>
+            android:textColor="@color/main"/>
         <View
-            android:id="@+id/menuview"
             android:layout_width="90dp"
             android:layout_height="2dp"
-            android:background="#ff7889"/>
+            android:background="@color/main"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -78,52 +78,62 @@
             android:layout_marginEnd="27dp">
             <ImageView
                 android:onClick="starClick"
-                android:id="@+id/star1"
+                android:id="@+id/writeReview_iv_star1"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_grey50"/>
+                android:src="@drawable/ic_grey50"
+                tools:ignore="ContentDescription" />
             <ImageView
                 android:onClick="starClick"
-                android:id="@+id/star2"
+                android:id="@+id/writeReview_iv_star2"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_grey50"/>
+                android:src="@drawable/ic_grey50"
+                tools:ignore="ContentDescription" />
             <ImageView
                 android:onClick="starClick"
-                android:id="@+id/star3"
+                android:id="@+id/writeReview_iv_star3"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_grey50"/>
+                android:src="@drawable/ic_grey50"
+                tools:ignore="ContentDescription" />
             <ImageView
                 android:onClick="starClick"
-                android:id="@+id/star4"
+                android:id="@+id/writeReview_iv_star4"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_grey50"/>
+                android:src="@drawable/ic_grey50"
+                tools:ignore="ContentDescription" />
             <ImageView
                 android:onClick="starClick"
-                android:id="@+id/star5"
+                android:id="@+id/writeReview_iv_star5"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_grey50"/>
+                android:src="@drawable/ic_grey50"
+                tools:ignore="ContentDescription" />
         </LinearLayout>
         <EditText
+            android:inputType="textMultiLine"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:overScrollMode="ifContentScrolls"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="#00ffffff"
-            android:hint="리뷰를 작성해주세요."
+            android:backgroundTint="@color/Transparent"
+            android:hint="@string/writeReview_hint"
             android:gravity="top"
             android:textSize="11.3sp"
-            android:textColor="#656565"
-            android:lineSpacingExtra="4dp"/>
+            android:textColor="@color/black"
+            android:lineSpacingExtra="4dp"
+            tools:ignore="Autofill,SmallSp" />
     </LinearLayout>
 
 </LinearLayout>

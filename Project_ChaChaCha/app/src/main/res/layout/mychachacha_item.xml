@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mychachacha_item"
+        android:orientation="vertical"
+        android:background="@drawable/image_rounding_12dp_top">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_launcher_background"
+            android:id="@+id/mychachacha_item_iv_img"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/mychachacha_item_tv_shopName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/black"
+            android:background="@color/Transparent"
+            tools:text="엄마랑 홍대 올때"
+            android:gravity="center"
+            android:textSize="12sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/image_rounding_12dp_top"/>
+
+</FrameLayout>

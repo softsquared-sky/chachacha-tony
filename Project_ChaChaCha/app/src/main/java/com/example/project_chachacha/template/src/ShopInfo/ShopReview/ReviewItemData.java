@@ -1,11 +1,11 @@
-package com.example.project_chachacha.template.src.ShopInfo;
+package com.example.project_chachacha.template.src.ShopInfo.ShopReview;
 
-public class Shop_review_data {
+public class ReviewItemData {
     private String name;
-    private String rate;
+    private int rate;
     private String content;
 
-    public Shop_review_data(String name, String rate, String content) {
+    public ReviewItemData(String name, int rate, String content) {
         this.name = name;
         this.rate = rate;
         this.content = content;
@@ -19,11 +19,11 @@ public class Shop_review_data {
         this.name = name;
     }
 
-    public String getRate() {
+    public int getRate() {
         return rate;
     }
 
-    public void setRate(String rate) {
+    public void setRate(int rate) {
         this.rate = rate;
     }
 

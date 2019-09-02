@@ -30,7 +30,7 @@ public class StoreShopListAdapter extends RecyclerView.Adapter<StoreShopListAdap
     @Override
     public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.StoreShop_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.storeshop_item,parent,false);
 
         CustomViewHolder viewHolder = new CustomViewHolder(view);
 
@@ -64,7 +64,7 @@ public class StoreShopListAdapter extends RecyclerView.Adapter<StoreShopListAdap
             this.tvTitle = itemView.findViewById(R.id.shop);
             this.tvMood = itemView.findViewById(R.id.moodtext);
             this.tvWriting = itemView.findViewById(R.id.writing);
-            this.ivBackImg = itemView.findViewById(R.id.list_item_img);
+            this.ivBackImg = itemView.findViewById(R.id.storeShop_iv_backImg);
             GradientDrawable drawable = (GradientDrawable)context.getDrawable(R.drawable.image_rounding);
             this.ivBackImg.setBackground(drawable);
             this.ivBackImg.setClipToOutline(true);

@@ -27,7 +27,7 @@ class MypageMainService {
         final MypageMainInterface mypageMainInterface = getRetrofitToken().create(MypageMainInterface.class);
         mypageMainInterface.getMypage(userid).enqueue(new Callback<MypageMainResponse>() {
             @Override
-            public void onResponse(@NotNull Call<MypageMainResponse> call, @NotNull Response<MypageMainResponse> response) {
+            public void onResponse(Call<MypageMainResponse> call,Response<MypageMainResponse> response) {
                 final MypageMainResponse mypageMainResponse = response.body();
                 if (mypageMainResponse == null) {
                     mMypageMainView.validateFailure(0, "response null");
@@ -42,7 +42,7 @@ class MypageMainService {
             }
 
             @Override
-            public void onFailure(@NotNull Call<MypageMainResponse> call, @NotNull Throwable t) {
+            public void onFailure( Call<MypageMainResponse> call, Throwable t) {
                 Log.d("tag", "오류", t.getCause());
                 mMypageMainView.validateFailure(0, "response fail");
             }

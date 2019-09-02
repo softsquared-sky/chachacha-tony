@@ -8,14 +8,14 @@ import android.widget.ImageView;
 
 import com.example.project_chachacha.R;
 import com.example.project_chachacha.template.src.BaseActivity;
-import com.example.project_chachacha.template.src.ShopInfo.ShopInfo;
+import com.example.project_chachacha.template.src.ShopInfo.ShopInfoActivity;
 
-public class Cha_Shop_Detail extends BaseActivity {
+public class MyChaShopDetail extends BaseActivity {
 
-    private Button review;
+    private Button mBtnReview;
 
-    private ImageView mivmoreinfo;
-    private ImageView mivstar;
+    private ImageView mIvMoreInfo;
+    private ImageView mIvStar;
     boolean like = false;
 
     @Override
@@ -23,34 +23,34 @@ public class Cha_Shop_Detail extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cha__shop__detail);
 
-        review=findViewById(R.id.goto_review);
-        review.setOnClickListener(new View.OnClickListener() {
+        mBtnReview =findViewById(R.id.myChaShopDetail_btn_review);
+        mBtnReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Cha_Shop_Detail.this, WriteReview.class);
+                Intent intent = new Intent(MyChaShopDetail.this, WriteReview.class);
                 startActivity(intent);
             }
         });
 
-        mivmoreinfo = findViewById(R.id.moreinfo);
-        mivmoreinfo.setOnClickListener(new View.OnClickListener() {
+        mIvMoreInfo = findViewById(R.id.myChaShopDetail_iv_moreinfo);
+        mIvMoreInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Cha_Shop_Detail.this, ShopInfo.class);
+                Intent intent = new Intent(MyChaShopDetail.this, ShopInfoActivity.class);
                 startActivity(intent);
             }
         });
 
-        mivstar = findViewById(R.id.star);
-        mivstar.setOnClickListener(new View.OnClickListener() {
+        mIvStar = findViewById(R.id.myChaShopDetail_iv_star);
+        mIvStar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(like==false){
-                    mivstar.setImageResource(R.drawable.ic_yellow_star);
+                if(!like){
+                    mIvStar.setImageResource(R.drawable.ic_yellow_star);
                     like = true;
                 }
                 else{
-                    mivstar.setImageResource(R.drawable.ic_empty_star);
+                    mIvStar.setImageResource(R.drawable.ic_empty_star);
                     like = false;
                 }
             }

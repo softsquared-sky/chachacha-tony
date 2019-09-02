@@ -11,6 +11,7 @@
     <string name="common_age">나이</string>
     <string name="common_gender">성별</string>
     <string name="common_next">다음</string>
+    <string name="common_content">%s</string>
     <!--TODO: Login -->
     <string name="login_autoLogin">로그인 상태를 유지하시겠습니까?</string>
     <string name="login_doLogin">로그인</string>
@@ -73,5 +74,18 @@
     <string name="chachacha_mood6">#조용한</string>
     <string name="chachacha_mood7">#데이트하기 좋은</string>
     <string name="chachacha_mood8">상관없음</string>
+    <!--TODO: ShopDetailActivity -->
+    <string name="shopDetail_moreInfo">더 많은 정보 보기</string>
+    <string name="shopDetail_chachacha">여기로 차차차!</string>
+    <string name="shopDetail_phone">-</string>
+    <!--TODO: ShopInfo -->
+    <string name="shopInfo_menu">메뉴</string>
+    <string name="shopInfo_review">리뷰</string>
+    <!--TODO: MyChaShop -->
+    <string name="myChaShop_review">리뷰 쓰러가기</string>
+    <!--TODO: WriteReview -->
+    <string name="writeReview_commit">작성</string>
+    <string name="writeReview_write">리뷰 작성</string>
+    <string name="writeReview_hint">리뷰를 작성해주세요.</string>
 
 </resources>

@@ -28,7 +28,7 @@ class ProfileEditService {
         JSONObject params = new JSONObject();
         try {
             params.put("name",name);
-            params.put("tvWriting", writing);
+            params.put("writing", writing);
             params.put("email",email);
             params.put("phone", phone);
         } catch (JSONException e) {

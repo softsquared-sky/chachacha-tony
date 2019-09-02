@@ -11,44 +11,49 @@
         android:orientation="horizontal"
         android:layout_marginBottom="7dp">
         <TextView
-            android:id="@+id/user_name"
+            android:id="@+id/shopReviewList_tv_userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="조수진"
-            android:textColor="#000000"
-            android:layout_marginRight="13dp"
+            android:textColor="@color/black"
+            android:layout_marginEnd="13dp"
             android:textSize="14sp"/>
         <ImageView
-            android:id="@+id/rate1"
+            android:id="@+id/shopReviewList_iv_rate1"
             android:layout_width="20dp"
             android:layout_gravity="bottom"
             android:layout_height="20dp"
-            android:src="@drawable/ic_star_yellow_24dp"/>
+            android:src="@drawable/ic_star_yellow_24dp"
+            tools:ignore="ContentDescription" />
         <ImageView
-            android:id="@+id/rate2"
+            android:id="@+id/shopReviewList_iv_rate2"
             android:layout_width="20dp"
             android:layout_gravity="bottom"
             android:layout_height="20dp"
-            android:src="@drawable/ic_star_yellow_24dp"/>
+            android:src="@drawable/ic_star_yellow_24dp"
+            tools:ignore="ContentDescription" />
 
         <ImageView
-            android:id="@+id/rate3"
+            android:id="@+id/shopReviewList_iv_rate3"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="bottom"
-            android:src="@drawable/ic_star_yellow_24dp" />
+            android:src="@drawable/ic_star_yellow_24dp"
+            tools:ignore="ContentDescription" />
         <ImageView
-            android:id="@+id/rate4"
+            android:id="@+id/shopReviewList_iv_rate4"
             android:layout_gravity="bottom"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/ic_star_yellow_24dp"/>
+            android:src="@drawable/ic_star_yellow_24dp"
+            tools:ignore="ContentDescription" />
         <ImageView
-            android:id="@+id/rate5"
+            android:id="@+id/shopReviewList_iv_rate5"
             android:layout_gravity="bottom"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/ic_star_yellow_24dp"/>
+            android:src="@drawable/ic_star_yellow_24dp"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
     <TextView
         android:id="@+id/shop_review_content"
@@ -56,14 +61,15 @@
         android:layout_height="wrap_content"
         android:textSize="11sp"
         android:lineSpacingExtra="6.7sp"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         tools:text="친구랑 둘이서 와도 좋고 여러명과 함께 했을 때도
 즐겁게 먹을 수 있는 곳~노래를 직접 고를 수 있고,
 다양한 맥주가 많아 3차로 오기에도 좋은 곳이다.
-최근에 회사 상사를 데려갔는데 되게 만족해 하셨다!"/>
+최근에 회사 상사를 데려갔는데 되게 만족해 하셨다!"
+        tools:ignore="SmallSp" />
     <View
         android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#FF7889"/>
+        android:background="@color/main"/>
 </LinearLayout>

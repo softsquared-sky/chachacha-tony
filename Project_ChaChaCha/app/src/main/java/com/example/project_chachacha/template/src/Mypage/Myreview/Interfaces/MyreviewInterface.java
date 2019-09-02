@@ -8,6 +8,6 @@ import retrofit2.http.Path;
 
 public interface MyreviewInterface {
 
-    @GET("/user/{userid}/reView")
+    @GET("/user/{userid}/review")
     Call<MyreviewResponse> getMyReview(@Path("userid") String userid);
 }

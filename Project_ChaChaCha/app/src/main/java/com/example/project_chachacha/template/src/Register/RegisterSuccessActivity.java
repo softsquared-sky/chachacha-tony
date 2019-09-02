@@ -18,7 +18,7 @@ public class RegisterSuccessActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register__success);
-        getWindow().setStatusBarColor(Color.parseColor("@color/main"));
+        getWindow().setStatusBarColor(Color.parseColor("#ff7889"));
         View view = getWindow().getDecorView();
         if(Build.VERSION.SDK_INT >=Build.VERSION_CODES.M){
             if (view != null) {

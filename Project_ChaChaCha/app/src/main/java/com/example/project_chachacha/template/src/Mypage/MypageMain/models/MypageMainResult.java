@@ -7,7 +7,7 @@ public class MypageMainResult {
     @SerializedName("name")
     private String name;
 
-    @SerializedName("tvWriting")
+    @SerializedName("writing")
     private String writing;
 
     @SerializedName("email")

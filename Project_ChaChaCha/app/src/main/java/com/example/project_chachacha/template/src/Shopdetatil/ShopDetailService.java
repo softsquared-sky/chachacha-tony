@@ -4,13 +4,15 @@ import com.example.project_chachacha.template.src.Shopdetatil.Interfaces.ShopDet
 import com.example.project_chachacha.template.src.Shopdetatil.Interfaces.ShopDetailView;
 import com.example.project_chachacha.template.src.Shopdetatil.models.ShopDetailResponse;
 
+import org.jetbrains.annotations.NotNull;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.example.project_chachacha.template.src.ApplicationClass.getRetrofitToken;
 
-public class ShopDetailService {
+class ShopDetailService {
 
     private final ShopDetailView mShopDetailView;
 
@@ -22,7 +24,7 @@ public class ShopDetailService {
         final ShopDetailInterface shopDetailInterface = getRetrofitToken().create(ShopDetailInterface.class);
         shopDetailInterface.getDetail(storeNum).enqueue(new Callback<ShopDetailResponse>() {
             @Override
-            public void onResponse(Call<ShopDetailResponse> call, Response<ShopDetailResponse> response) {
+            public void onResponse(@NotNull Call<ShopDetailResponse> call, @NotNull Response<ShopDetailResponse> response) {
                 final ShopDetailResponse shopDetailResponse = response.body();
                 if(shopDetailResponse==null){
                     mShopDetailView.validateFailure(0,"응답 null");
@@ -33,7 +35,7 @@ public class ShopDetailService {
             }
 
             @Override
-            public void onFailure(Call<ShopDetailResponse> call, Throwable t) {
+            public void onFailure(@NotNull Call<ShopDetailResponse> call, @NotNull Throwable t) {
                 mShopDetailView.validateFailure(0, "응답 fail");
             }
         });

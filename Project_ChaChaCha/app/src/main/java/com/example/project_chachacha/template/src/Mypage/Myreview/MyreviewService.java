@@ -12,7 +12,7 @@ import retrofit2.Response;
 
 import static com.example.project_chachacha.template.src.ApplicationClass.getRetrofitToken;
 
-public class MyreviewService {
+class MyreviewService {
 
     private final MyreviewView mMyreviewView;
 

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".template.src.Register.RegisterSelectActivity"
-    android:orientation="vertical"
-    android:background="#ffffff">
+    android:background="@color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,26 +16,40 @@
             android:layout_height="24dp"
             android:layout_marginStart="20dp"
             android:src="@drawable/ic_chevron_left_black_24dp"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="167dp"
             android:layout_height="24dp"
-            android:text="회원가입"
+            android:text="@string/register_title"
             android:textSize="18sp"
-            android:textColor="#222B45"
+            android:textColor="@color/Title_Color"
             android:gravity="center"
             android:textStyle="bold"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="사장"
-        android:id="@+id/boss"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="손님"
-        android:id="@+id/guest"/>
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_height="440dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_boss2"
+            android:id="@+id/registerSelect_iv_boss"
+            tools:ignore="ContentDescription" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_guest2"
+            android:id="@+id/registerSelect_iv_guest"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+</RelativeLayout>

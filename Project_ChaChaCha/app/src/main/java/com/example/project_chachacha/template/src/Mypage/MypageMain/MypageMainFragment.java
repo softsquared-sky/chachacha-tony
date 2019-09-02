@@ -27,12 +27,14 @@ import static com.example.project_chachacha.template.src.ApplicationClass.EMAIL;
 import static com.example.project_chachacha.template.src.ApplicationClass.PHONE;
 import static com.example.project_chachacha.template.src.ApplicationClass.USERID;
 import static com.example.project_chachacha.template.src.ApplicationClass.USERNAME;
+import static com.example.project_chachacha.template.src.ApplicationClass.sSharedPreferences;
 import static com.example.project_chachacha.template.src.ApplicationClass.sharedPreferences;
 
 
 public class MypageMainFragment extends Fragment implements MypageMainView {
 
     private TextView mTvUserName, mTvComment, mTvEmail, mTvPhone, mTvRegisterDay;
+    private SharedPreferences.Editor editor = sSharedPreferences.edit();
 
     public static MypageMainFragment newInstance(){
         return new MypageMainFragment();
@@ -57,20 +59,18 @@ public class MypageMainFragment extends Fragment implements MypageMainView {
 
         final MypageMainService mMypageMainService = new MypageMainService(this);
 
-        SharedPreferences sp = this.getActivity().getSharedPreferences("Auto",Context.MODE_PRIVATE);
-        String strUserId = sp.getString("strUserId", null);
-        USERID = strUserId;
+//        SharedPreferences sp = this.getActivity().getSharedPreferences("Auto",Context.MODE_PRIVATE);
+//        String strUserId = sp.getString("strUserId", null);
+//        USERID = strUserId;
 
-        mMypageMainService.getMypage(strUserId);
-        System.out.println("넘어온 strUserId: " + strUserId);
+        mMypageMainService.getMypage(USERID);
+        System.out.println("넘어온 UserId: " + USERID);
 
         TextView tvLogout = view.findViewById(R.id.myPageMain_tv_logout);
         tvLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Context context = getActivity();
-                sharedPreferences = context.getSharedPreferences("Auto", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
+//                Context context = getActivity();
                 editor.putBoolean("check",false);
                 editor.apply();
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
@@ -91,7 +91,7 @@ public class MypageMainFragment extends Fragment implements MypageMainView {
             }
         });
 
-        ImageView ivReview = (ImageView) view.findViewById(R.id.myPageMain_iv_myReview);
+        ImageView ivReview = view.findViewById(R.id.myPageMain_iv_myReview);
         ivReview.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -99,7 +99,7 @@ public class MypageMainFragment extends Fragment implements MypageMainView {
             }
         });
 
-        ImageView ivStore = (ImageView) view.findViewById(R.id.myPageMain_iv_saveShop);
+        ImageView ivStore = view.findViewById(R.id.myPageMain_iv_saveShop);
         ivStore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,7 +114,7 @@ public class MypageMainFragment extends Fragment implements MypageMainView {
 
     @Override
     public void validateSuccess(int code, String message, String name, String writing, String email, String phone, String signuptime) {
-        System.out.println("성공!!!" + name);
+        System.out.println("성공!!!" + writing);
         mTvUserName.setText(name);
         mTvComment.setText(writing);
         mTvEmail.setText(email);

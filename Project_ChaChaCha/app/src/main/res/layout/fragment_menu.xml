@@ -3,160 +3,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".template.src.ShopInfo.Menu">
+    tools:context=".template.src.ShopInfo.ShopMenu.MenuFragment">
 
     <TextView
+        android:id="@+id/shopMenu_tv_food"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="안주류"
+        tools:text="안주류"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="23dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="10dp"
         android:textSize="11sp"
-        android:textColor="#656565"/>
-    <LinearLayout
+        android:textColor="@color/gray"
+        tools:ignore="SmallSp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shopMenu_rv_foodList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="15dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="막걸리 반반전대표"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="18,000원"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-    </LinearLayout>
-    <LinearLayout
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:scrollbarFadeDuration="0"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    <TextView
+        android:id="@+id/shopMenu_tv_drink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="주류"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="11sp"
+        android:textColor="@color/gray"
+        tools:ignore="SmallSp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/shopMenu_rv_drinkList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="막걸리 반반전대표"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="18,000원"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="15dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="막걸리 반반전대표"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="18,000원"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="15dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="막걸리 반반전대표"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="18,000원"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="15dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="막걸리 반반전대표"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="18,000원"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="막걸리 반반전대표"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="18,000원"
-            android:textSize="12.5sp"
-            android:textColor="#000000"/>
-    </LinearLayout>
+        android:layout_marginEnd="16dp"
+        android:scrollbarFadeDuration="0"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 </LinearLayout>

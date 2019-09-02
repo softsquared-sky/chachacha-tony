@@ -34,7 +34,7 @@ public class ProfileEditFragment extends Fragment implements ProfileEditView {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_profile__edit,null);
+        View view = inflater.inflate(R.layout.fragment_profile__edit,container, false);
         ImageView mIvBack = view.findViewById(R.id.profileEdit_iv_back);
         mIvBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +49,7 @@ public class ProfileEditFragment extends Fragment implements ProfileEditView {
         mTvCommit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println(USERID);
                 profileEditService.patchEdit(USERID, mEdtName.getText().toString(), mEdtComment.getText().toString(),
                         mEdtEmail.getText().toString(), mEdtPhone.getText().toString());
             }

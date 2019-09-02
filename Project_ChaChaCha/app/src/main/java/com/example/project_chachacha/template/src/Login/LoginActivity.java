@@ -21,12 +21,12 @@ import com.example.project_chachacha.template.src.Register.RegisterSelectActivit
 import static com.example.project_chachacha.template.src.ApplicationClass.X_ACCESS_TOKEN;
 import static com.example.project_chachacha.template.src.ApplicationClass.USERID;
 import static com.example.project_chachacha.template.src.ApplicationClass.sSharedPreferences;
-import static com.example.project_chachacha.template.src.ApplicationClass.sharedPreferences;
 
 public class LoginActivity extends BaseActivity implements LoginView {
 
     private EditText mEdtUserId, mEdtUserPw;
     private Switch mSwtAuto;
+    private SharedPreferences.Editor editor = sSharedPreferences.edit();
 
     private LoginService mLoginService = new LoginService(this);
 
@@ -83,19 +83,19 @@ public class LoginActivity extends BaseActivity implements LoginView {
         System.out.println("code: " + code);
         X_ACCESS_TOKEN = jwt;
         System.out.println(X_ACCESS_TOKEN);
-        SharedPreferences.Editor editor2 = sSharedPreferences.edit();
-        editor2.putString("token", X_ACCESS_TOKEN);
-        editor2.apply();
-
-        sharedPreferences = getSharedPreferences("Auto", MODE_PRIVATE); // 하나로 위에랑 합치기
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        boolean check = mSwtAuto.isChecked();
-        editor.putBoolean("check", check);
-        editor.putString("userid", mEdtUserId.getText().toString());
+        editor.putString("token", X_ACCESS_TOKEN);
+        editor.putString("userId", mEdtUserId.getText().toString());
+        editor.putBoolean("check",mSwtAuto.isChecked());
         editor.apply();
+
+//        sharedPreferences = getSharedPreferences("Auto", MODE_PRIVATE); // 하나로 위에랑 합치기
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        boolean check = mSwtAuto.isChecked();
+//        editor.putBoolean("check", check);
+//        editor.putString("userid", mEdtUserId.getText().toString());
+//        editor.apply();
         USERID = mEdtUserId.getText().toString();
         Intent intent = new Intent(LoginActivity.this, MypageActivity.class);
-//        intent.putExtra("userid", userid.getText().toString());
         startActivity(intent);
         finish();
     }

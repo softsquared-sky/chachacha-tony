@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,10 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="108dp"/>
     <ImageView
-        android:layout_width="192dp"
-        android:layout_height="73.1dp"
-        android:background="#FF7889"
-        android:layout_gravity="center" />
+        android:layout_width="220dp"
+        android:layout_height="85dp"
+        android:src="@drawable/bg_logo"
+        android:layout_gravity="center"
+        tools:ignore="ContentDescription" />
     <View
         android:layout_width="match_parent"
         android:layout_height="80dp"/>
@@ -29,11 +29,12 @@
         android:hint="@string/common_id"
         android:backgroundTint="#00FF7889"
         android:textSize="12sp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        tools:ignore="Autofill" />
     <View
         android:layout_width="220dp"
         android:layout_height="2.5dp"
-        android:background="#FF7889"
+        android:background="@color/main"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"/>
     <EditText
@@ -43,14 +44,15 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:hint="@string/common_password"
-        android:backgroundTint="#00FF7889"
+        android:backgroundTint="@color/Transparent"
         android:textSize="12sp"
         android:layout_gravity="center"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        tools:ignore="Autofill" />
     <View
         android:layout_width="220dp"
         android:layout_height="2.5dp"
-        android:background="#FF7889"
+        android:background="@color/main"
         android:layout_gravity="center"
         android:layout_marginBottom="18dp"/>
     <LinearLayout
@@ -63,13 +65,14 @@
             android:layout_height="wrap_content"
             android:textSize="11sp"
             android:text="@string/login_autoLogin"
-            android:textColor="#9B9B9B" />
+            android:textColor="@color/lightgray"
+            tools:ignore="SmallSp" />
         <Switch
             android:id="@+id/login_swt_autoCheck"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:switchMinWidth="14.5sp"
-            android:thumbTint="#ffffff"/>
+            android:thumbTint="@color/white"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -81,7 +84,7 @@
         android:background="@drawable/style2"
         android:text="@string/login_doLogin"
         android:textSize="15sp"
-        android:textColor="#ffffff"
+        android:textColor="@color/white"
         android:layout_gravity="center"/>
     <View
         android:layout_width="match_parent"
@@ -95,14 +98,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="11sp"
-            android:text="@string/login_askRegister"/>
+            android:text="@string/login_askRegister"
+            tools:ignore="SmallSp" />
         <TextView
             android:id="@+id/login_tv_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="11sp"
             android:text="@string/login_register"
-            android:textColor="#FF7889"/>
+            android:textColor="@color/main"
+            tools:ignore="SmallSp" />
     </LinearLayout>
     
 

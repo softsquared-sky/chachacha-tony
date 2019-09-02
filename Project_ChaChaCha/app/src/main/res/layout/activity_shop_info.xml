@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.ShopInfo.ShopInfo"
-    android:background="#ffffff">
+    tools:context=".template.src.ShopInfo.ShopInfoActivity"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,34 +14,36 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="#FFFFFF"
+            android:background="@color/white"
             android:layout_marginBottom="12dp">
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginStart="20dp"
                 android:src="@drawable/ic_chevron_left_black_24dp"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                tools:ignore="ContentDescription" />
             <TextView
-                android:id="@+id/shoptitle"
+                android:id="@+id/shopInfo_tv_title"
                 android:layout_width="167dp"
                 android:layout_height="24dp"
-                android:text="가게이름"
+                tools:text="가게이름"
                 android:textSize="18sp"
-                android:textColor="#222B45"
+                android:textColor="@color/Title_Color"
                 android:lineSpacingExtra="4dp"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:layout_centerInParent="true"/>
             <ImageView
-                android:id="@+id/star"
+                android:id="@+id/shopInfo_iv_star"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_empty_star"
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="11.3dp"
-                android:layout_marginEnd="13.3dp"/>
+                android:layout_marginEnd="13.3dp"
+                tools:ignore="ContentDescription" />
         </RelativeLayout>
 
         <LinearLayout
@@ -57,15 +58,15 @@
                 android:orientation="vertical">
                 <TextView
                     android:onClick="menuClick"
-                    android:id="@+id/btn_menu"
+                    android:id="@+id/shopInfo_tv_menu"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:text="메뉴"
+                    android:text="@string/shopInfo_menu"
                     android:gravity="center"
                     android:textSize="14sp"
                     android:textColor="@drawable/shop_info_button"/>
                 <View
-                    android:id="@+id/menuview"
+                    android:id="@+id/shopInfo_view_menu"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="@drawable/shop_info_tab_press"/>
@@ -79,29 +80,27 @@
                 android:orientation="vertical">
                 <TextView
                     android:onClick="menuClick"
-                    android:id="@+id/btn_review"
+                    android:id="@+id/shopInfo_tv_review"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:text="리뷰"
+                    android:text="@string/shopInfo_review"
                     android:gravity="center"
                     android:textSize="14sp"
                     android:textColor="@drawable/shop_info_button"/>
                 <View
-                    android:id="@+id/reviewview"
+                    android:id="@+id/shopInfo_view_review"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="@drawable/shop_info_tab_press"/>
             </LinearLayout>
         </LinearLayout>
         <FrameLayout
-            android:id="@+id/fragment_view"
+            android:id="@+id/shopInfo_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
-            android:background="@drawable/background_shadow">
-
-        </FrameLayout>
+            android:background="@drawable/background_shadow" />
         <View
             android:layout_width="match_parent"
             android:layout_height="100dp"/>
@@ -112,7 +111,7 @@
     <Button
         android:layout_width="145dp"
         android:layout_height="42dp"
-        android:text="여기로 차차차!"
+        android:text="@string/shopDetail_chachacha"
         android:textColor="#ffffff"
         android:textSize="15sp"
         android:layout_alignParentBottom="true"

@@ -18,7 +18,7 @@ import retrofit2.Response;
 import static com.example.project_chachacha.template.src.ApplicationClass.MEDIA_TYPE_JSON;
 import static com.example.project_chachacha.template.src.ApplicationClass.getRetrofit;
 
-public class LoginService {
+class LoginService {
 
     private final LoginView mLoginView;
 
@@ -39,7 +39,7 @@ public class LoginService {
         final LoginInterface mLoginInterface = getRetrofit().create(LoginInterface.class);
         mLoginInterface.postLogin(RequestBody.create(params.toString(), MEDIA_TYPE_JSON)).enqueue(new Callback<LoginResponse>() {
             @Override
-            public void onResponse(@NotNull Call<LoginResponse> call, @NotNull Response<LoginResponse> response) {
+            public void onResponse(Call<LoginResponse> call,Response<LoginResponse> response) {
                 final LoginResponse loginResponse = response.body();
                 if (loginResponse == null) {
                     mLoginView.validateFailure(0, "response null");
@@ -54,7 +54,7 @@ public class LoginService {
             }
 
             @Override
-            public void onFailure(@NotNull Call<LoginResponse> call, @NotNull Throwable t) {
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
                 Log.d("tag", "오류", t.getCause());
                 t.getCause();
                 mLoginView.validateFailure(0, "로그인 response fail");

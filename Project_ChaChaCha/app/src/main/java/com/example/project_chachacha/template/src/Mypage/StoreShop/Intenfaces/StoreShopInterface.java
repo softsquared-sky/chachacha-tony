@@ -8,6 +8,6 @@ import retrofit2.http.Path;
 
 public interface StoreShopInterface {
 
-    @GET("/user/{userid}/bookMark")
+    @GET("/user/{userid}/bookmark")
     Call<StoreShopResponse> getbookmark(@Path("userid") String userid);
 }

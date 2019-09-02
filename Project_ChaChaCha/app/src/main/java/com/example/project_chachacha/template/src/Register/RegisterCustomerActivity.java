@@ -3,6 +3,7 @@ package com.example.project_chachacha.template.src.Register;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,7 @@ import com.example.project_chachacha.template.src.Register.Interfaces.RegisterVi
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegisterCustomerActivity extends BaseActivity implements RegisterView {
 
@@ -28,6 +30,7 @@ public class RegisterCustomerActivity extends BaseActivity implements RegisterVi
 
     private Timer timer = new Timer();
 
+    private boolean CheckEmail = false;
     private boolean CheckPw =false;
     private boolean CheckAge = false; // 서버통신 최소화를 위해서 넘기기 전에 관리
     private boolean CheckGender = false;
@@ -60,55 +63,6 @@ public class RegisterCustomerActivity extends BaseActivity implements RegisterVi
 
         mTvPwComment = findViewById(R.id.register_tv_pwComment);
 
-        //나중에 비밀번호호 패턴검사 가하면 추가
-
-
-//        mbtnPwcheck = findViewById(R.id.CheckPw);
-//        mbtnPwcheck.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                String pwPattern = "^(?=.*\\d)(?=.*[~`!@#$%\\^&*()-])(?=.*[a-z])(?=.*[A-Z]).{8,15}$";
-////                matcher = Pattern.compile(pwPattern).matcher(mEdtUserPw.getText().toString());
-////                if(!matcher.matches()){
-////                    mStrMsg = "잘못된 비밀번호 형식입니다.\n영어,숫자 및 특수문자조합으로\n8자리이상 15자리이하로 입력해주세요.";
-////                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterCustomerActivity.this, mStrMsg);
-////                    mCustomDialogOneButton.setCancelable(false);
-////                    mCustomDialogOneButton.show();
-////                    mEdtUserPw.setText("");
-////                    mEdtUserPwCheck.setText("");
-////                    mEdtUserPw.requestFocus();
-////                }
-////                else {
-//                if(mEdtUserPw.getText().toString().equals("")){
-//                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterCustomerActivity.this, "비밀번호를 입력해주세요.");
-//                    mCustomDialogOneButton.setCancelable(false);
-//                    mCustomDialogOneButton.show();
-//                    mEdtUserPw.setText("");
-//                    mEdtUserPwCheck.setText("");
-//                    mEdtUserPw.requestFocus();
-//                }
-//                else{
-//                    if(mEdtUserPw.getText().toString().equals(mEdtUserPwCheck.getText().toString())){
-//                        CheckPw=true; // 비밀번호 형식이 일치하지 않으면 다시 false로
-//                        mCustomDialogOneButton = new CustomDialogOneButton(RegisterCustomerActivity.this, "비밀번호가 일치합니다.");
-//                        mCustomDialogOneButton.setCancelable(false);
-//                        mCustomDialogOneButton.show();
-//                    }
-//                    else{
-//                        mCustomDialogOneButton = new CustomDialogOneButton(RegisterCustomerActivity.this, "비밀번호가 일치하지 않습니다.");
-//                        mCustomDialogOneButton.setCancelable(false);
-//                        mCustomDialogOneButton.show();
-//                        mEdtUserPw.setText("");
-//                        mEdtUserPwCheck.setText("");
-//                        mEdtUserPw.requestFocus();
-//                    }
-//                }
-//
-////                }
-//
-//            }
-//        });
-
         ImageView mIvBack = findViewById(R.id.register_iv_back);
         mIvBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,17 +79,59 @@ public class RegisterCustomerActivity extends BaseActivity implements RegisterVi
         mBtnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println(age + " " + gender + " " + CheckPw);
-                if(CheckPw){
+                String userId = mEdtUserId.getText().toString();
+                String userPw = mEdtUserPw.getText().toString();
+                String userPwCheck = mEdtUserPwCheck.getText().toString();
+                String userName = mEdtName.getText().toString();
+                String userEmail = mEdtEmail.getText().toString();
+                String userPhone = mEdtPhone.getText().toString();
+                if(userId.equals("")||userPw.equals("")||userPwCheck.equals("")||userName.equals("")||
+                userEmail.equals("")||userPhone.equals("")||!CheckAge||!CheckGender){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterCustomerActivity.this, "모든 항목을 입력해주세요.");
+                    mCustomDialogOneButton.setCancelable(false);
+                    mCustomDialogOneButton.show();
+                }
+                else if(!Pattern.matches("^[a-z0-9]{4,10}$",userId)){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterCustomerActivity.this, "아이디가 올바르지 않습니다.");
+                    mCustomDialogOneButton.setCancelable(false);
+                    mCustomDialogOneButton.show();
+                    mEdtUserId.setText("");
+                    mEdtUserId.requestFocus();
+                }
+                else if(!CheckPw){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterCustomerActivity.this, "비밀번호가 올바르지 않습니다.");
+                    mCustomDialogOneButton.setCancelable(false);
+                    mCustomDialogOneButton.show();
+                    mEdtUserPw.setText("");
+                    mEdtUserPwCheck.setText("");
+                    mEdtUserPw.requestFocus();
+                }
+                else if(!Pattern.matches("^[가-힣]{2,5}$",userName)){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterCustomerActivity.this, "이름을 올바르게 입력해주세요.");
+                    mCustomDialogOneButton.setCancelable(false);
+                    mCustomDialogOneButton.show();
+                    mEdtName.setText("");
+                    mEdtName.requestFocus();
+                }
+                else if(!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterCustomerActivity.this, "이메일을 올바르게 입력해주세요.");
+                    mCustomDialogOneButton.setCancelable(false);
+                    mCustomDialogOneButton.show();
+                    mEdtEmail.setText("");
+                    mEdtEmail.requestFocus();
+                }
+                else if(!Pattern.matches("^01([0|1|6|7|8|9][0-9]{3,4}[0-9]{4})$",userPhone)){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterCustomerActivity.this, "전화번호를 올바르게 입력해주세요.");
+                    mCustomDialogOneButton.setCancelable(false);
+                    mCustomDialogOneButton.show();
+                    mEdtPhone.setText("");
+                    mEdtPhone.requestFocus();
+                }
+                else{
                     registerService.postCustomer(mEdtUserId.getText().toString(), mEdtUserPw.getText().toString(),
                             mEdtName.getText().toString(),age,gender, mEdtEmail.getText().toString(), mEdtPhone.getText().toString());
                 }
-                else{
-                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterCustomerActivity.this, "비밀번호가 일치하지 않습니다.");
-                    mCustomDialogOneButton.setCancelable(false);
-                    mCustomDialogOneButton.show();
-                    mEdtUserPw.requestFocus();
-                }
+
             }
         });
 
@@ -152,17 +148,24 @@ public class RegisterCustomerActivity extends BaseActivity implements RegisterVi
                             CheckPw =false;
                         }
                         else{
-                            if(mEdtUserPw.getText().toString().equals(mEdtUserPwCheck.getText().toString())){
-                                viewUserPwCheckLine.setBackground(getDrawable(R.drawable.style3));
-                                mTvPwComment.setText("비밀번호가 일치합니다.");
-                                mTvPwComment.setTextColor(Color.parseColor("#00bfff"));
-                                CheckPw =true;
-                            }
-                            else{
-                                viewUserPwCheckLine.setBackground(getDrawable(R.drawable.style8));
-                                mTvPwComment.setText("비밀번호가 일치하지 않습니다.");
+                            if(!Pattern.matches("^(?=.*\\d)(?=.*[~`!@#$%\\^&*()-])(?=.*[a-zA-Z]).{8,15}$", mEdtUserPw.getText().toString())){
+                                mTvPwComment.setText("비밀번호가 올바른형식이 아닙니다.\n영어,특수문자,숫자 조합으로 8자리이상 15자리이하입니다.");
                                 mTvPwComment.setTextColor(Color.parseColor("#99FF0000"));
                                 CheckPw =false;
+                            }
+                            else{
+                                if(mEdtUserPw.getText().toString().equals(mEdtUserPwCheck.getText().toString())){
+                                    viewUserPwCheckLine.setBackground(getDrawable(R.drawable.style3));
+                                    mTvPwComment.setText("비밀번호가 일치합니다.");
+                                    mTvPwComment.setTextColor(Color.parseColor("#00bfff"));
+                                    CheckPw =true;
+                                }
+                                else{
+                                    viewUserPwCheckLine.setBackground(getDrawable(R.drawable.style8));
+                                    mTvPwComment.setText("비밀번호가 일치하지 않습니다.");
+                                    mTvPwComment.setTextColor(Color.parseColor("#99FF0000"));
+                                    CheckPw =false;
+                                }
                             }
                         }
                     }
@@ -170,61 +173,74 @@ public class RegisterCustomerActivity extends BaseActivity implements RegisterVi
             }
         };
         timer.schedule(timerTask,0,50);
+
     }
 
 
     @Override
     public void validateSuccess(int code, String message) {
-        System.out.println(code + "  " + message);
-        if(code==100){
+
+        final int success = 100;
+        final int DuplicateID = 101;
+        final int DuplicateEmail = 102;
+        final int InvalidName = 103;
+        final int InvalidPw = 104;
+        final int InvalidEmail = 105;
+        final int InvalidPhone = 106;
+        final int InvalidAge = 107;
+        final int InvalidGender = 108;
+        final int EmptyText = 109;
+        final int InvalidID = 110;
+
+        if(code==success){
             Intent intent = new Intent(RegisterCustomerActivity.this, RegisterSuccessActivity.class);
             startActivity(intent);
             finish();
         }
         else{ // 에러코드 정리되면
             switch (code){
-                case 101:
+                case DuplicateID:
                     mStrMsg = "중복된 아이디입니다.\n다시 입력해주세요.";
                     mEdtUserId.setText("");
                     mEdtUserId.requestFocus();
                     break;
-                case 102:
+                case DuplicateEmail:
                     mStrMsg = "중복된 이메일입니다.\n다시 입력해주세요.";
                     mEdtEmail.setText("");
                     mEdtEmail.requestFocus();
                     break;
-                case 103:
+                case InvalidName:
                     mStrMsg = "잘못된 이름 형식입니다.\n한글로 입력해주세요.";
                     mEdtName.setText("");
                     mEdtName.requestFocus();
                     break;
-                case 104:
+                case InvalidPw:
                     mStrMsg = "잘못된 비밀번호 형식입니다.\n영어,숫자 및 특수문자조합으로\n8자리이상 15자리이하로 입력해주세요.";
                     mEdtUserPw.setText("");
                     mEdtUserPwCheck.setText("");
                     mEdtUserPw.requestFocus();
                     CheckPw =false;
                     break;
-                case 105:
+                case InvalidEmail:
                     mStrMsg = "잘못된 이메일 형식입니다.\n다시 입력해주세요.";
                     mEdtEmail.setText("");
                     mEdtEmail.requestFocus();
                     break;
-                case 106:
+                case InvalidPhone:
                     mStrMsg = "잘못된 전화번호 형식입니다.\n다시 입력해주세요.";
                     mEdtPhone.setText("");
                     mEdtPhone.requestFocus();
                     break;
-                case 107:
+                case InvalidAge:
                     mStrMsg = "나이를 선택해주세요.";
                     break;
-                case 108:
+                case InvalidGender:
                     mStrMsg = "성별을 선택해주세요.";
                     break;
-                case 109:
+                case EmptyText:
                     mStrMsg = "모든 항목을 입력해주세요.";
                     break;
-                case 110:
+                case InvalidID:
                     mStrMsg = "잘못된 아이디 형식입니다.\n영소문자,숫자 조합으로\n4자리 이상 10자리로 입력해주세요.";
                     mEdtUserId.setText("");
                     mEdtUserId.requestFocus();

@@ -8,5 +8,8 @@
         android:state_selected="true"
         android:drawable="@drawable/style7" />
 
+    <item
+        android:drawable="@drawable/image_rounding_5dp"/>
+
 
 </selector>
