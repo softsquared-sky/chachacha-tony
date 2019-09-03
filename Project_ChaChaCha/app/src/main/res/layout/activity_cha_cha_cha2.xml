@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.MainChaChaCha.ChaChaChaList.ChaChaChaListActivity"
+    tools:context=".template.src.mainChaChaCha.chachachaList.ChaChaChaListActivity"
     android:orientation="vertical"
     android:background="#ffffff">
     <RelativeLayout

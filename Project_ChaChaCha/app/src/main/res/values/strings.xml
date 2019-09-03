@@ -87,5 +87,8 @@
     <string name="writeReview_commit">작성</string>
     <string name="writeReview_write">리뷰 작성</string>
     <string name="writeReview_hint">리뷰를 작성해주세요.</string>
+    <!--TODO: Dialog -->
+    <string name="dialog_notice">NOTICE</string>
+    <string name="dialog_confirm">확인</string>
 
 </resources>

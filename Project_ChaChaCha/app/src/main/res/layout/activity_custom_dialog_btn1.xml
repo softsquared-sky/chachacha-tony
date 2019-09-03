@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="300dp"
+    android:layout_width="250dp"
     android:layout_height="wrap_content"
     tools:context=".template.src.CustomDialogOneButton"
     android:orientation="vertical"
@@ -12,9 +11,9 @@
         android:layout_height="40dp"
         android:background="#ff7889"
         android:gravity="center"
-        android:text="NOTICE"
-        android:textColor="#ffffff"
-        android:textSize="16dp"
+        android:text="@string/dialog_notice"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         android:textStyle="bold"/>
     <TextView
         android:id="@+id/message"
@@ -23,7 +22,7 @@
         android:layout_marginBottom="30dp"
         android:layout_marginTop="30dp"
         android:gravity="center"
-        android:textSize="14dp"
+        android:textSize="14sp"
         tools:text="내용" />
     <View
         android:layout_width="match_parent"
@@ -35,9 +34,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:text="확인"
+        android:text="@string/dialog_confirm"
         android:gravity="center"
-        android:textSize="14dp" />
+        android:textSize="14sp" />
 
 
 </LinearLayout>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.Register.RegisterSelectActivity"
+    tools:context=".template.src.register.RegisterSelectActivity"
     android:background="@color/white">
 
     <RelativeLayout

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.Mypage.Myreview.MyreviewFragment"
+    tools:context=".template.src.mypage.Myreview.MyreviewFragment"
     android:orientation="vertical"
     android:background="#ffffff">
 

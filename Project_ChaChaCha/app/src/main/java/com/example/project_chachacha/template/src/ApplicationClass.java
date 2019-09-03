@@ -24,7 +24,11 @@ public class ApplicationClass extends Application {
     public static String COMMENT;
     public static String EMAIL;
     public static String PHONE;
+    public static String SIGNUPTIME;
+
     public static String USERID;
+
+    public static boolean GETMYPAGE = false;
 
     // 테스트 서버 주소
     public static String BASE_URL = "http://www.so-yo.info";
@@ -32,8 +36,6 @@ public class ApplicationClass extends Application {
 //    public static String BASE_URL = "https://template.softsquared.com/";
 
     public static SharedPreferences sSharedPreferences = null;
-
-    public static SharedPreferences sharedPreferences = null;
 
     // SharedPreferences 키 값
     public static String TAG = "TEMPLATE_APP";

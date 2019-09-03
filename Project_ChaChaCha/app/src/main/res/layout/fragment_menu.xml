@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".template.src.ShopInfo.ShopMenu.MenuFragment">
+    tools:context=".template.src.shopInfo.ShopMenu.MenuFragment">
 
     <TextView
         android:id="@+id/shopMenu_tv_food"
