@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp">
+    android:layout_height="wrap_content">
     <LinearLayout
+        android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -68,6 +68,7 @@
 최근에 회사 상사를 데려갔는데 되게 만족해 하셨다!"
         tools:ignore="SmallSp" />
     <View
+        android:id="@+id/divider"
         android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"

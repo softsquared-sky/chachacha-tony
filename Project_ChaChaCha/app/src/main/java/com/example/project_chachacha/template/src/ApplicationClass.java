@@ -28,7 +28,7 @@ public class ApplicationClass extends Application {
 
     public static String USERID;
 
-    public static boolean GETMYPAGE = false;
+    public static boolean GETMYPAGE = false; // 전역변수로 선언 x
 
     // 테스트 서버 주소
     public static String BASE_URL = "http://www.so-yo.info";

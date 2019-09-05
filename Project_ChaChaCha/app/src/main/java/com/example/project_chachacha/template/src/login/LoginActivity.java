@@ -15,7 +15,7 @@ import com.example.project_chachacha.R;
 import com.example.project_chachacha.template.src.BaseActivity;
 import com.example.project_chachacha.template.src.CustomDialogOneButton;
 import com.example.project_chachacha.template.src.login.Interfaces.LoginView;
-import com.example.project_chachacha.template.src.mypage.MypageActivity;
+import com.example.project_chachacha.template.src.myPage.MypageActivity;
 import com.example.project_chachacha.template.src.register.RegisterSelectActivity;
 
 import static com.example.project_chachacha.template.src.ApplicationClass.X_ACCESS_TOKEN;
@@ -26,9 +26,9 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     private EditText mEdtUserId, mEdtUserPw;
     private Switch mSwtAuto;
-    private SharedPreferences.Editor editor = sSharedPreferences.edit();
+    private SharedPreferences.Editor editor = sSharedPreferences.edit(); // 수정 가능하면 안으로 넣어주기 메모리를 계속 잡기있기때문에
 
-    private LoginService mLoginService = new LoginService(this);
+    private LoginService mLoginService = new LoginService(this); // 안으로 this는 밖에다 빼는것 지양
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +103,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Override
     public void validateFailure(int code, String message) {
         System.out.println(code + " " + message);
-        String mStrMsg = message;
+        String mStrMsg = message; // 이름 변경 -> 관리포인트임 서버에서 한다.
         switch (code) {
             case 114:
                 mStrMsg = "아이디 또는 패스워드가 올바르지 않습니다.\n다시 입력해주세요.";

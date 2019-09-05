@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.mypage.MypageMain.MypageMainFragment"
+    tools:context=".template.src.myPage.MyPageMain.MypageMainFragment"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -13,7 +13,8 @@
         android:background="@color/white">
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="4sp"
             android:text="@string/mypageMain_title"
             android:textSize="18sp"
             android:textColor="@color/Title_Color"
@@ -126,7 +127,7 @@
                         android:textColor="@color/gray"
                         android:layout_marginEnd="12dp"/>
                     <TextView
-                        android:id="@+id/RegitDay"
+                        android:id="@+id/myPageMain_tv_regitDay"
                         android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

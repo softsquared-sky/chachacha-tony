@@ -6,7 +6,7 @@
     android:layout_marginEnd="28dp"
     android:layout_marginStart="28dp"
     android:background="@drawable/style_shop"
-    android:layout_marginBottom="10dp">
+    android:layout_marginBottom="5dp">
 
     <ImageView
         android:id="@+id/storeShop_iv_backImg"

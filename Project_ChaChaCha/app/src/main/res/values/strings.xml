@@ -56,6 +56,8 @@
     <!--TODO: MyChaChaCha -->
     <string name="myChaChaCha_title">마이 차차차</string>
     <!--TODO: ChaChaCha -->
+    <string name="chachacha_title2">차차차</string>
+    <string name="chachacha_find">제가 찾아볼래요!</string>
     <string name="chachacha_title">차차차 START</string>
     <string name="chachacha_askNum">몇명이야?</string>
     <string name="chachacha_num1">1~2명</string>
@@ -90,5 +92,7 @@
     <!--TODO: Dialog -->
     <string name="dialog_notice">NOTICE</string>
     <string name="dialog_confirm">확인</string>
+    <string name="dialog_yes">예</string>
+    <string name="dialog_no">아니오</string>
 
 </resources>

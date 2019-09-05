@@ -14,17 +14,19 @@
 
         <ImageView
             android:id="@+id/register_iv_back"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginStart="20dp"
+            android:layout_centerVertical="true"
             android:src="@drawable/ic_chevron_left_black_24dp"
             tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="167dp"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:text="@string/register_title"
             android:textSize="18sp"
-            android:textColor="#222B45"
+            android:textColor="@color/Title_Color"
+            android:lineSpacingExtra="4sp"
             android:gravity="center"
             android:textStyle="bold"
             android:layout_centerInParent="true"/>
@@ -218,19 +220,21 @@
                 android:background="@drawable/style3"
                 android:layout_marginStart="28dp"
                 android:layout_marginEnd="27dp">
+
                 <EditText
-                    android:singleLine="true"
-                    android:nextFocusDown="@id/register_edt_phone"
+                    android:inputType="textEmailAddress"
                     android:id="@+id/register_edt_email"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:backgroundTint="@color/Transparent"
                     android:hint="@string/register_emailHint"
-                    android:textSize="14sp"
-                    android:layout_gravity="center"
+                    android:nextFocusDown="@id/register_edt_phone"
                     android:paddingStart="16dp"
-                    android:paddingEnd="16dp"/>
+                    android:paddingEnd="16dp"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -258,6 +262,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginEnd="27dp">
                 <EditText
+                    android:inputType="phone"
                     android:singleLine="true"
                     android:id="@+id/register_edt_phone"
                     android:layout_width="0dp"

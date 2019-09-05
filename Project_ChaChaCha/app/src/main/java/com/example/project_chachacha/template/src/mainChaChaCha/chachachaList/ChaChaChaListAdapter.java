@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.project_chachacha.R;
-import com.example.project_chachacha.template.src.mypage.StoreShop.StoreShopItemData;
+import com.example.project_chachacha.template.src.myPage.StoreShop.StoreShopItemData;
 
 import java.util.ArrayList;
 

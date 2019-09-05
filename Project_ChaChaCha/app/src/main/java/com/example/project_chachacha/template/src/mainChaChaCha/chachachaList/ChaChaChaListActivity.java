@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.project_chachacha.R;
 import com.example.project_chachacha.template.src.BaseActivity;
-import com.example.project_chachacha.template.src.mypage.StoreShop.StoreShopItemData;
+import com.example.project_chachacha.template.src.myPage.StoreShop.StoreShopItemData;
 
 import java.util.ArrayList;
 

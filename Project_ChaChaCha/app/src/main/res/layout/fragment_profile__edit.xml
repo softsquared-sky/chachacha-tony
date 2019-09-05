@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.mypage.ProfileEdit.ProfileEditFragment"
+    tools:context=".template.src.myPage.ProfileEdit.ProfileEditFragment"
     android:orientation="vertical"
     android:background="@color/white">
     <RelativeLayout
@@ -13,17 +13,18 @@
         android:layout_marginBottom="24dp">
         <ImageView
             android:id="@+id/profileEdit_iv_back"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginStart="20dp"
             android:src="@drawable/ic_chevron_left_black_24dp"
             android:layout_centerVertical="true"
             tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="167dp"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:text="@string/profile_title"
             android:textSize="18sp"
+            android:lineSpacingExtra="4sp"
             android:textColor="@color/Title_Color"
             android:gravity="center"
             android:textStyle="bold"
@@ -34,10 +35,9 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:text="@string/profile_complete"
-            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:textColor="@color/black"
-            android:layout_marginTop="20dp"
+            android:layout_centerVertical="true"
             android:layout_marginEnd="22dp"
             tools:ignore="RelativeOverlap" />
     </RelativeLayout>
@@ -113,6 +113,7 @@
                 android:layout_marginEnd="45dp"
                 android:layout_marginBottom="16dp">
                 <EditText
+                    android:inputType="textEmailAddress"
                     android:id="@+id/profileEdit_edt_email"
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -138,6 +139,7 @@
                 android:layout_marginBottom="16dp">
                 <EditText
                     android:id="@+id/profileEdit_edt_phone"
+                    android:inputType="phone"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"

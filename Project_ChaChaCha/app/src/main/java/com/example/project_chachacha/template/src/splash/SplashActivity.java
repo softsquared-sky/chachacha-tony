@@ -8,7 +8,7 @@ import com.example.project_chachacha.R;
 import com.example.project_chachacha.template.src.BaseActivity;
 import com.example.project_chachacha.template.src.CustomDialogOneButton;
 import com.example.project_chachacha.template.src.login.LoginActivity;
-import com.example.project_chachacha.template.src.mypage.MypageActivity;
+import com.example.project_chachacha.template.src.myPage.MypageActivity;
 import com.example.project_chachacha.template.src.splash.Interfaces.SplashView;
 
 import static com.example.project_chachacha.template.src.ApplicationClass.USERID;

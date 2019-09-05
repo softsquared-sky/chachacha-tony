@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.shopdetatil.ShopDetailActivity"
+    tools:context=".template.src.shop.shopdetatil.ShopDetailActivity"
     android:background="@color/white"
     android:orientation="vertical">
     <RelativeLayout
@@ -11,16 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="56dp">
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginStart="20dp"
             android:src="@drawable/ic_chevron_left_black_24dp"
             android:layout_centerVertical="true"
             tools:ignore="ContentDescription" />
         <TextView
             android:id="@+id/shopDetail_tv_title"
-            android:layout_width="167dp"
-            android:layout_height="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             tools:text="가게이름"
             android:textSize="18sp"
             android:textColor="@color/Title_Color"
@@ -30,8 +30,8 @@
             android:layout_centerInParent="true"/>
         <ImageView
             android:id="@+id/shopDetail_iv_star"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:src="@drawable/ic_empty_star"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
@@ -52,16 +52,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="376dp"
                 android:scaleType="centerCrop"
-                tools:background="#BEBDBD"
+                android:background="@color/white"
                 tools:ignore="ContentDescription" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="376dp"
-                android:background="@color/ImgDark"/>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
                 <LinearLayout
                     android:id="@+id/shopDetail_view_shopdetail"
                     android:layout_width="match_parent"
@@ -104,7 +99,7 @@
                         android:layout_marginTop="4.7dp"
                         android:lineSpacingExtra="4sp"
                         tools:text="좋은 친구와 잔을 부딪히는 횟수와 행복은 비례한다고 생각합니다. "
-                        android:textColor="#000000"
+                        android:textColor="@color/black"
                         android:textSize="10sp"
                         tools:ignore="SmallSp" />
 
@@ -117,8 +112,8 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="18dp"
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
                             android:layout_marginEnd="5.5dp"
                             android:src="@drawable/ic_mark"
                             tools:ignore="ContentDescription" />
@@ -145,8 +140,8 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
                             android:layout_marginEnd="5.5dp"
                             android:src="@drawable/ic_time"
                             tools:ignore="ContentDescription" />
@@ -203,12 +198,14 @@
                             android:layout_height="wrap_content"
                             android:textSize="15sp"
                             android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:gravity="center"
                             android:layout_marginEnd="10dp"
                             android:text="@string/shopDetail_moreInfo" />
                         <ImageView
                             android:id="@+id/shopDetail_iv_moreInfo"
-                            android:layout_width="20dp"
-                            android:layout_height="10dp"
+                            android:layout_width="18dp"
+                            android:layout_height="9dp"
                             android:src="@drawable/ic_path"
                             android:layout_gravity="center"
                             tools:ignore="ContentDescription" />
@@ -216,6 +213,19 @@
                 </RelativeLayout>
 
                 <Button
+                    android:id="@+id/shopDetail_btn_review"
+                    android:layout_width="145dp"
+                    android:layout_height="42dp"
+                    android:text="@string/myChaShop_review"
+                    android:layout_below="@id/shopDetail_view_moreInfo"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/style4"
+                    android:layout_marginBottom="22dp"/>
+
+                <Button
+                    android:id="@+id/shopDetail_btn_chachacha"
                     android:layout_width="145dp"
                     android:layout_height="42dp"
                     android:text="@string/shopDetail_chachacha"

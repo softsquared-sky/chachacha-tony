@@ -27,7 +27,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#ff7889"/>
+        android:background="@color/main"/>
     <TextView
         android:id="@+id/btn"
         android:layout_width="match_parent"

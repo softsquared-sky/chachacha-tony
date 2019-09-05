@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.mypage.Myreview.MyreviewFragment"
+    tools:context=".template.src.myPage.MyReview.MyreviewFragment"
     android:orientation="vertical"
     android:background="#ffffff">
 
@@ -13,15 +13,15 @@
         android:orientation="horizontal">
         <ImageView
             android:id="@+id/myreview_iv_back"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginStart="20dp"
             android:src="@drawable/ic_chevron_left_black_24dp"
             android:layout_centerVertical="true"
             tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="167dp"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:text="@string/myreview_title"
             android:textSize="18sp"
             android:lineSpacingExtra="4sp"
@@ -36,10 +36,7 @@
         android:id="@+id/myreview_rv_reviewList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbarFadeDuration="0"
-        android:scrollbarSize="5dp"
-        android:scrollbarThumbVertical="@android:color/darker_gray"
-        android:scrollbars="vertical">
+        >
 
     </androidx.recyclerview.widget.RecyclerView>
 

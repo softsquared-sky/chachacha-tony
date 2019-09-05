@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.shopInfo.ShopInfoActivity"
+    tools:context=".template.src.shop.shopInfo.ShopInfoActivity"
     android:background="@color/white">
 
     <LinearLayout
@@ -17,8 +17,8 @@
             android:background="@color/white"
             android:layout_marginBottom="12dp">
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginStart="20dp"
                 android:src="@drawable/ic_chevron_left_black_24dp"
                 android:layout_centerVertical="true"
@@ -26,7 +26,7 @@
             <TextView
                 android:id="@+id/shopInfo_tv_title"
                 android:layout_width="167dp"
-                android:layout_height="24dp"
+                android:layout_height="wrap_content"
                 tools:text="가게이름"
                 android:textSize="18sp"
                 android:textColor="@color/Title_Color"
@@ -36,8 +36,8 @@
                 android:layout_centerInParent="true"/>
             <ImageView
                 android:id="@+id/shopInfo_iv_star"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_empty_star"
                 android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
@@ -97,7 +97,8 @@
         <FrameLayout
             android:id="@+id/shopInfo_fragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/background_shadow" />
@@ -107,15 +108,15 @@
     </LinearLayout>
 
 
-
     <Button
+        android:id="@+id/shopInfo_btn_chachacha"
         android:layout_width="145dp"
         android:layout_height="42dp"
         android:text="@string/shopDetail_chachacha"
         android:textColor="#ffffff"
         android:textSize="15sp"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/style4"
         android:layout_marginBottom="22dp"/>
 
