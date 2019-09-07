@@ -2,6 +2,7 @@ package com.example.project_chachacha.template.src.shop.shopInfo.ShopReview;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,13 +33,20 @@ public class ReviewFragment extends Fragment implements ReviewView {
 
     private CustomDialogOneButton customDialogOneButton;
     private String message;
+    private int storeNum;
 
     private int totalReview;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_review, container, false);
+
+        Bundle extra = this.getArguments();
+        if(extra!=null){
+            storeNum = extra.getInt("storenum",0);
+        }
 
         mTvTotalReview = rootView.findViewById(R.id.shopReview_tv_totalReview);
         recyclerView = rootView.findViewById(R.id.shopReview_rv_list);
@@ -47,7 +55,7 @@ public class ReviewFragment extends Fragment implements ReviewView {
         recyclerView.setAdapter(adapter);
 
         final ReviewService reviewService = new ReviewService(this);
-        reviewService.getShopReview(1); // storeNum받아와서 넣어야함
+        reviewService.getShopReview(storeNum);
         // Inflate the layout for this fragment
         return rootView;
     }
@@ -60,16 +68,13 @@ public class ReviewFragment extends Fragment implements ReviewView {
         final int storeNumFormError = 210;
         final int InvalidStoreNum = 499;
         if(code==Success){
-            List<ReviewCount> reviewCounts = reviewResult.getReviewCount();
-            totalReview = reviewCounts.get(0).getReviewcount();
+            totalReview = reviewResult.getReviewCount();
             String content = "리뷰 "+totalReview+"개";
             mTvTotalReview.setText(getString(R.string.common_content, content));
             List<Review> reviews = reviewResult.getReview();
-            for(int k=0; k<5; k++){  // 테스트
-                for(int i=0; i<reviews.size(); i++){
-                    ReviewItemData reviewItemData = new ReviewItemData(reviews.get(i).getName(),reviews.get(i).getStar(),reviews.get(i).getText());
-                    arrayList.add(reviewItemData);
-                }
+            for(int i=0; i<reviews.size(); i++){
+                ReviewItemData reviewItemData = new ReviewItemData(reviews.get(i).getName(),reviews.get(i).getStar(),reviews.get(i).getText());
+                arrayList.add(reviewItemData);
             }
             adapter.notifyDataSetChanged();
         }

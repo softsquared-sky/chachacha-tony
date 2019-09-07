@@ -21,21 +21,18 @@ import com.example.project_chachacha.template.src.myPage.MyReview.MyreviewFragme
 import com.example.project_chachacha.template.src.myPage.ProfileEdit.ProfileEditFragment;
 import com.example.project_chachacha.template.src.myPage.StoreShop.StoreShopFragment;
 
-import static com.example.project_chachacha.template.src.ApplicationClass.COMMENT;
-import static com.example.project_chachacha.template.src.ApplicationClass.EMAIL;
-import static com.example.project_chachacha.template.src.ApplicationClass.GETMYPAGE;
-import static com.example.project_chachacha.template.src.ApplicationClass.PHONE;
-import static com.example.project_chachacha.template.src.ApplicationClass.SIGNUPTIME;
 import static com.example.project_chachacha.template.src.ApplicationClass.USERID;
-import static com.example.project_chachacha.template.src.ApplicationClass.USERNAME;
 import static com.example.project_chachacha.template.src.ApplicationClass.sSharedPreferences;
 
 
 public class MypageMainFragment extends Fragment implements MypageMainView {
 
     private TextView mTvUserName, mTvComment, mTvEmail, mTvPhone, mTvRegisterDay;
-    private SharedPreferences.Editor editor = sSharedPreferences.edit();
-    private CustomDialogOneButton customDialogOneButton;
+    private CustomDialogOneButton mCustomDialogOneButton;
+
+    private String tempName, tempComment, tempEmail, tempPhone, tempRegisterDay;
+
+    private boolean FirstExecute = false;
 
     public static MypageMainFragment newInstance(){
         return new MypageMainFragment();
@@ -54,31 +51,15 @@ public class MypageMainFragment extends Fragment implements MypageMainView {
 
 
         final MypageMainService mMypageMainService = new MypageMainService(this);
-
-//        SharedPreferences sp = this.getActivity().getSharedPreferences("Auto",Context.MODE_PRIVATE);
-//        String strUserId = sp.getString("strUserId", null);
-//        USERID = strUserId;
-
-        if(!GETMYPAGE){
-            mMypageMainService.getMypage(USERID);
-            System.out.println("첫 실행");
-            GETMYPAGE = true;
-        }
-        else{
-            mTvUserName.setText(USERNAME);
-            mTvComment.setText(COMMENT);
-            mTvEmail.setText(EMAIL);
-            mTvPhone.setText(PHONE);
-            mTvRegisterDay.setText(SIGNUPTIME);
-        }
+        mMypageMainService.getMypage(USERID);
 
         TextView tvLogout = view.findViewById(R.id.myPageMain_tv_logout); // 로그아웃
         tvLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor = sSharedPreferences.edit();
                 editor.putBoolean("check",false);
                 editor.apply();
-                GETMYPAGE = false;
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
                 if(getActivity()!=null){
@@ -91,12 +72,6 @@ public class MypageMainFragment extends Fragment implements MypageMainView {
         tvEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                USERNAME = mTvUserName.getText().toString();
-//                COMMENT = mTvComment.getText().toString();
-//                EMAIL = mTvEmail.getText().toString();
-//                PHONE = mTvPhone.getText().toString();
-//                SIGNUPTIME = mTvRegisterDay.getText().toString();
-                GETMYPAGE = false;
                 if(getActivity()!=null){
                     ((MypageActivity)getActivity()).replaceFragment(ProfileEditFragment.newInstance());
                 }
@@ -141,11 +116,6 @@ public class MypageMainFragment extends Fragment implements MypageMainView {
             mTvEmail.setText(email);
             mTvPhone.setText(phone);
             mTvRegisterDay.setText(signuptime);
-            USERNAME = mTvUserName.getText().toString();
-            COMMENT = mTvComment.getText().toString();
-            EMAIL = mTvEmail.getText().toString();
-            PHONE = mTvPhone.getText().toString();
-            SIGNUPTIME = mTvRegisterDay.getText().toString();
         }
         else{
             if(code == InvalidToken){
@@ -154,9 +124,9 @@ public class MypageMainFragment extends Fragment implements MypageMainView {
             else{
                 msg = "유효하지 않은 아이디입니다.\n다시 로그인 해주세요.";
             }
-            customDialogOneButton = new CustomDialogOneButton(getContext(),msg);
-            customDialogOneButton.setCancelable(false);
-            customDialogOneButton.show();
+            mCustomDialogOneButton = new CustomDialogOneButton(getContext(),msg);
+            mCustomDialogOneButton.setCancelable(false);
+            mCustomDialogOneButton.show();
             if(getActivity()!=null){
                 getActivity().finish();
             }
@@ -167,8 +137,8 @@ public class MypageMainFragment extends Fragment implements MypageMainView {
     public void validateFailure(int code, String message) {
         System.out.println("실패!!" + " " + message);
         String msg = "서버가 응답하지 않습니다.";
-        customDialogOneButton = new CustomDialogOneButton(getActivity(),msg);
-        customDialogOneButton.setCancelable(false);
-        customDialogOneButton.show();
+        mCustomDialogOneButton = new CustomDialogOneButton(getContext(),msg);
+        mCustomDialogOneButton.setCancelable(false);
+        mCustomDialogOneButton.show();
     }
 }

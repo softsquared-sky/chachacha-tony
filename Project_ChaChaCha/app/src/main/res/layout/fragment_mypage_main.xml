@@ -173,11 +173,10 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="152dp"/>
                 <ImageView
-                    android:padding="10dp"
                     android:id="@+id/myPageMain_iv_myReview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_chevron_right_black_24dp"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_right_path"
                     android:layout_gravity="center_vertical"
                     tools:ignore="ContentDescription" />
             </LinearLayout>
@@ -198,11 +197,10 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="138dp"/>
                 <ImageView
-                    android:padding="10dp"
                     android:id="@+id/myPageMain_iv_saveShop"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_chevron_right_black_24dp"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_right_path"
                     android:layout_gravity="center_vertical"
                     tools:ignore="ContentDescription" />
             </LinearLayout>

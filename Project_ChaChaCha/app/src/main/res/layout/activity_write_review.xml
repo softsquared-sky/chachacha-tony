@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".template.src.myChaShopDetail.WriteReview"
+    tools:context=".template.src.myChaShopDetail.writeReview.WriteReview"
     android:orientation="vertical"
     android:background="@color/white">
     <RelativeLayout
@@ -47,7 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="-4dp">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -118,6 +119,7 @@
                 tools:ignore="ContentDescription" />
         </LinearLayout>
         <EditText
+            android:id="@+id/writeReview_edt_text"
             android:inputType="textMultiLine"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

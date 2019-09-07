@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="108dp"/>
     <ImageView
-        android:layout_width="220dp"
+        android:layout_width="200dp"
         android:layout_height="85dp"
         android:src="@drawable/bg_logo"
         android:layout_gravity="center"
@@ -24,7 +24,7 @@
         android:id="@+id/login_edt_userId"
         android:singleLine="true"
         android:nextFocusDown="@id/login_edt_userPw"
-        android:layout_width="220dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:hint="@string/common_id"
         android:backgroundTint="#00FF7889"
@@ -32,16 +32,17 @@
         android:layout_gravity="center"
         tools:ignore="Autofill" />
     <View
-        android:layout_width="220dp"
+        android:layout_width="200dp"
         android:layout_height="2.5dp"
         android:background="@color/main"
+        android:layout_marginTop="-5dp"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"/>
     <EditText
         android:singleLine="true"
         android:nextFocusDown="@id/login_btn_login"
         android:id="@+id/login_edt_userPw"
-        android:layout_width="220dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:hint="@string/common_password"
         android:backgroundTint="@color/Transparent"
@@ -50,9 +51,10 @@
         android:inputType="textPassword"
         tools:ignore="Autofill" />
     <View
-        android:layout_width="220dp"
+        android:layout_width="200dp"
         android:layout_height="2.5dp"
         android:background="@color/main"
+        android:layout_marginTop="-5dp"
         android:layout_gravity="center"
         android:layout_marginBottom="18dp"/>
     <LinearLayout
@@ -61,9 +63,9 @@
         android:orientation="horizontal"
         android:layout_gravity="center">
         <TextView
-            android:layout_width="154.9dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="11sp"
+            android:textSize="10sp"
             android:text="@string/login_autoLogin"
             android:textColor="@color/lightgray"
             tools:ignore="SmallSp" />
@@ -90,21 +92,24 @@
         android:layout_width="match_parent"
         android:layout_height="19dp"/>
     <LinearLayout
-        android:layout_width="192dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="11sp"
+            android:letterSpacing="-0.02"
+            android:textSize="10sp"
             android:text="@string/login_askRegister"
-            tools:ignore="SmallSp" />
+            tools:ignore="SmallSp"
+            android:layout_marginEnd="5dp"/>
         <TextView
             android:id="@+id/login_tv_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="11sp"
+            android:letterSpacing="-0.02"
+            android:textSize="10sp"
             android:text="@string/login_register"
             android:textColor="@color/main"
             tools:ignore="SmallSp" />

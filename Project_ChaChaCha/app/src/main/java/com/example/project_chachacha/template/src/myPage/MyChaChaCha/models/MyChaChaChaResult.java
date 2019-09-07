@@ -7,11 +7,18 @@ public class MyChaChaChaResult {
     @SerializedName("chanum")
     private int chanum;
 
+    @SerializedName("storenum")
+    private int storenum;
+
     @SerializedName("storename")
     private String storename;
 
     @SerializedName("imageurl")
     private String imageurl;
+
+    public int getStorenum() {
+        return storenum;
+    }
 
     public int getChanum() {
         return chanum;

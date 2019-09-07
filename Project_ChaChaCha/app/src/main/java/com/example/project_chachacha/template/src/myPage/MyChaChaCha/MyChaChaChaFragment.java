@@ -45,6 +45,7 @@ public class MyChaChaChaFragment extends Fragment implements MyChaChaChaView {
 
         gridLayoutManager = new GridLayoutManager(getContext(), 2);
 
+
         recyclerView.setLayoutManager(gridLayoutManager);
 
         recyclerView.setAdapter(adapter);
@@ -64,7 +65,7 @@ public class MyChaChaChaFragment extends Fragment implements MyChaChaChaView {
         final int InvalidUserId = 399;
         if(code == Success){
             for(int i=0; i<list.size(); i++){
-                MyChaChaChaItemData myChaChaChaItemData = new MyChaChaChaItemData(list.get(i).getChanum(), list.get(i).getImageurl(), list.get(i).getStorename());
+                MyChaChaChaItemData myChaChaChaItemData = new MyChaChaChaItemData(list.get(i).getChanum(), list.get(i).getStorenum(),list.get(i).getImageurl(), list.get(i).getStorename());
                 arrayList.add(myChaChaChaItemData);
             }
             adapter.notifyDataSetChanged();

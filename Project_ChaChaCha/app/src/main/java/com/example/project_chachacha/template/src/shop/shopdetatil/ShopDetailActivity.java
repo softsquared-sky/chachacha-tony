@@ -1,5 +1,6 @@
 package com.example.project_chachacha.template.src.shop.shopdetatil;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import com.example.project_chachacha.template.src.BaseActivity;
 import com.example.project_chachacha.template.src.CustomDialogOneButton;
 import com.example.project_chachacha.template.src.CustomDialogTwoButton;
 import com.example.project_chachacha.template.src.login.LoginActivity;
-import com.example.project_chachacha.template.src.myChaShopDetail.WriteReview;
+import com.example.project_chachacha.template.src.myPage.MypageActivity;
 import com.example.project_chachacha.template.src.shop.Interfaces.ShopChaChaChaView;
 import com.example.project_chachacha.template.src.shop.ShopChaChaChaService;
 import com.example.project_chachacha.template.src.shop.shopInfo.ShopInfoActivity;
@@ -29,7 +30,9 @@ import static com.example.project_chachacha.template.src.ApplicationClass.USERID
 
 public class ShopDetailActivity extends BaseActivity implements ShopDetailView, ShopChaChaChaView {
 
-    private ImageView mIvMoreInfo, mIvShopImg, mIvCall;
+    public static Activity sShopDetailActivity;
+
+    private ImageView mIvMoreInfo, mIvShopImg, mIvCall, mIvStar, mIvback;
     private TextView mTvShopTitle, mTvShopTitle2, mTvMood, mTvWriting, mTvShopAddress, mTvShopTime;
     private String mStrPhone;
     private Button mBtnChaChaCha;
@@ -39,6 +42,7 @@ public class ShopDetailActivity extends BaseActivity implements ShopDetailView, 
     private CustomDialogOneButton mCustomDialogOneButton;
 
     private String mStrMessage;
+    private boolean like = false;
 
     private final ShopChaChaChaService shopChaChaChaService = new ShopChaChaChaService(this);
 
@@ -47,7 +51,10 @@ public class ShopDetailActivity extends BaseActivity implements ShopDetailView, 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_detail);
 
-        storeNum = 1; // 임시값
+        sShopDetailActivity = ShopDetailActivity.this;
+
+        Intent intent = getIntent();
+        storeNum = intent.getIntExtra("storenum", 0);
 
         mTvShopTitle = findViewById(R.id.shopDetail_tv_title);
         mTvShopTitle2 = findViewById(R.id.shopDetail_tv_title2);
@@ -57,12 +64,35 @@ public class ShopDetailActivity extends BaseActivity implements ShopDetailView, 
         mTvShopTime = findViewById(R.id.shopDetail_tv_shoptime);
         mIvShopImg = findViewById(R.id.shopDetail_iv_shopImg);
         mIvCall = findViewById(R.id.shopDetail_iv_call);
+        mIvStar = findViewById(R.id.shopDetail_iv_star);
 
         mIvCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(mStrPhone));
                 startActivity(intent);
+            }
+        });
+
+        mIvback = findViewById(R.id.shopDetail_iv_back);
+        mIvback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        mIvStar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!like){
+                    mIvStar.setImageResource(R.drawable.ic_yellow_star);
+                    like = true;
+                }
+                else{
+                    mIvStar.setImageResource(R.drawable.ic_empty_star);
+                    like = false;
+                }
             }
         });
 
@@ -75,6 +105,9 @@ public class ShopDetailActivity extends BaseActivity implements ShopDetailView, 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ShopDetailActivity.this, ShopInfoActivity.class);
+                intent.putExtra("storenum", storeNum);
+                intent.putExtra("storename", mTvShopTitle.getText().toString());
+                intent.putExtra("check",false);
                 startActivity(intent);
             }
         });
@@ -90,21 +123,26 @@ public class ShopDetailActivity extends BaseActivity implements ShopDetailView, 
                 mCustomDialogTwoButton.show();
             }
         });
-        Button btnreview = findViewById(R.id.shopDetail_btn_review);
-        btnreview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ShopDetailActivity.this, WriteReview.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
     private View.OnClickListener leftListener = new View.OnClickListener(){
         @Override
         public void onClick(View view) {
+            showProgressDialog();
             shopChaChaChaService.postSaveMyCha(USERID, storeNum);
             mCustomDialogTwoButton.dismiss();
+        }
+    };
+
+    private View.OnClickListener MyChaChaCha = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(ShopDetailActivity.this, MypageActivity.class);
+            intent.putExtra("checkMyCha",true);
+            startActivity(intent);
+            mCustomDialogTwoButton.dismiss();
+            finish();
         }
     };
 
@@ -143,8 +181,11 @@ public class ShopDetailActivity extends BaseActivity implements ShopDetailView, 
         final int EmptyStoreNum = 298;
         final int InvalidUserId = 399;
         final int InvalidStoreNum = 449;
+        hideProgressDialog();
         if(code == Success){
-            mBtnChaChaCha.setVisibility(View.GONE);
+            mCustomDialogTwoButton = new CustomDialogTwoButton(this, "마이차차차에 추가되었습니다.\n마이차차차로 이동하시겠습니까?",MyChaChaCha);
+            mCustomDialogTwoButton.setCancelable(false);
+            mCustomDialogTwoButton.show();
         }
         else{
             switch (code){
@@ -165,10 +206,10 @@ public class ShopDetailActivity extends BaseActivity implements ShopDetailView, 
                     mCustomDialogOneButton.show();
                     break;
                 case Duplicate:
-                    mStrMessage = "이미 마이차차차에 등록된 가게입니다.";
-                    mCustomDialogOneButton = new CustomDialogOneButton(this, mStrMessage);
-                    mCustomDialogOneButton.setCancelable(false);
-                    mCustomDialogOneButton.show();
+                    mStrMessage = "이미 마이차차차에 등록된 가게입니다.\n마이차차차로 이동하시겠습니까?";
+                    mCustomDialogTwoButton = new CustomDialogTwoButton(this, mStrMessage,MyChaChaCha);
+                    mCustomDialogTwoButton.setCancelable(false);
+                    mCustomDialogTwoButton.show();
                     break;
                 case EmptyStoreNum:
                     mStrMessage = "storeNum이 입력되지 않았습니다.";

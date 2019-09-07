@@ -1,11 +1,13 @@
-package com.example.project_chachacha.template.src.myChaShopDetail.MyChaShop.models;
+package com.example.project_chachacha.template.src.myPage.Search.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class MyChaShopResponse {
+import java.util.List;
+
+public class SearchResponse {
 
     @SerializedName("result")
-    private MyChaShopResult result = null;
+    private List<SearchResult> result = null;
 
     @SerializedName("isSuccess")
     private boolean isSuccess;
@@ -16,7 +18,7 @@ public class MyChaShopResponse {
     @SerializedName("message")
     private String message;
 
-    public MyChaShopResult getResult() {
+    public List<SearchResult> getResult() {
         return result;
     }
 

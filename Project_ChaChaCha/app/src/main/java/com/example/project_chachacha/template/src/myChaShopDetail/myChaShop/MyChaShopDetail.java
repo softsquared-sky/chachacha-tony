@@ -1,6 +1,7 @@
-package com.example.project_chachacha.template.src.myChaShopDetail.MyChaShop;
+package com.example.project_chachacha.template.src.myChaShopDetail.myChaShop;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,10 +12,9 @@ import com.bumptech.glide.Glide;
 import com.example.project_chachacha.R;
 import com.example.project_chachacha.template.src.BaseActivity;
 import com.example.project_chachacha.template.src.CustomDialogOneButton;
-import com.example.project_chachacha.template.src.CustomDialogTwoButton;
-import com.example.project_chachacha.template.src.myChaShopDetail.MyChaShop.Interfaces.MyChaShopView;
-import com.example.project_chachacha.template.src.myChaShopDetail.MyChaShop.models.MyChaShopResult;
-import com.example.project_chachacha.template.src.myChaShopDetail.WriteReview;
+import com.example.project_chachacha.template.src.myChaShopDetail.myChaShop.Interfaces.MyChaShopView;
+import com.example.project_chachacha.template.src.myChaShopDetail.myChaShop.models.MyChaShopResult;
+import com.example.project_chachacha.template.src.myChaShopDetail.writeReview.WriteReview;
 import com.example.project_chachacha.template.src.shop.shopInfo.ShopInfoActivity;
 
 import static com.example.project_chachacha.template.src.ApplicationClass.USERID;
@@ -25,12 +25,17 @@ public class MyChaShopDetail extends BaseActivity implements MyChaShopView {
 
     private TextView mTvMainTitle, mTvSubTitle, mTvMood, mTvWriting, mTvAddress, mTvShopTime;
     private ImageView mIvBackImg;
-
+    private ImageView mIvCall;
     private ImageView mIvMoreInfo;
     private ImageView mIvStar;
+    private ImageView mIvback;
     private boolean like = false;
 
     private String mStrMessage;
+    private String mStrPhone;
+
+    private int storeNum;
+    private int chaNum;
 
     private CustomDialogOneButton mCustomDialogOneButton;
 
@@ -40,7 +45,8 @@ public class MyChaShopDetail extends BaseActivity implements MyChaShopView {
         setContentView(R.layout.activity_cha__shop__detail);
 
         Intent intent = getIntent();
-        int chaNum = intent.getIntExtra("chanum", 0);
+        chaNum = intent.getIntExtra("chanum", 0);
+        storeNum = intent.getIntExtra("storenum",0);
 
         final MyChaShopService myChaShopService = new MyChaShopService(this);
         myChaShopService.getMyShop(USERID, chaNum);
@@ -50,6 +56,25 @@ public class MyChaShopDetail extends BaseActivity implements MyChaShopView {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MyChaShopDetail.this, WriteReview.class);
+                intent.putExtra("chanum",chaNum);
+                intent.putExtra("title", mTvMainTitle.getText().toString());
+                startActivity(intent);
+            }
+        });
+
+        mIvback = findViewById(R.id.myChashopDetail_iv_back);
+        mIvback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        mIvCall = findViewById(R.id.myChaShopDetail_iv_call);
+        mIvCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(mStrPhone));
                 startActivity(intent);
             }
         });
@@ -58,7 +83,12 @@ public class MyChaShopDetail extends BaseActivity implements MyChaShopView {
         mIvMoreInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println(mTvMainTitle.getText().toString());
                 Intent intent = new Intent(MyChaShopDetail.this, ShopInfoActivity.class);
+                intent.putExtra("storenum", storeNum);
+                intent.putExtra("storename", mTvMainTitle.getText().toString());
+                intent.putExtra("check",true);
+                intent.putExtra("chanum", chaNum);
                 startActivity(intent);
             }
         });
@@ -96,9 +126,16 @@ public class MyChaShopDetail extends BaseActivity implements MyChaShopView {
         if(code == Success){
             mTvMainTitle.setText(result.getStorename());
             mTvSubTitle.setText(result.getStorename());
-            mTvMood.setText(result.getMode());
+            String mood = result.getMode();
+            mood = mood.replace(",","");
+            mTvMood.setText(mood);
             mTvWriting.setText(result.getStorewriting());
             Glide.with(this).load(result.getImageurl()).into(mIvBackImg);
+            mTvAddress.setText(result.getAddress());
+            String shopTime = result.getOpentime() + " - " + result.getClosstime();
+            mTvShopTime.setText(shopTime);
+            mStrPhone = result.getPhone().replace("-","");
+            mStrPhone = "tel:"+mStrPhone;
         }
         else{
             switch (code){

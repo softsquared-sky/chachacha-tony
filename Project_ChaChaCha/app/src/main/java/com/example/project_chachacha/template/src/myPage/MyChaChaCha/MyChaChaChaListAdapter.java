@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.project_chachacha.R;
 import com.example.project_chachacha.template.src.CustomDialogTwoButton;
-import com.example.project_chachacha.template.src.myChaShopDetail.MyChaShop.MyChaShopDetail;
+import com.example.project_chachacha.template.src.myChaShopDetail.myChaShop.MyChaShopDetail;
 import com.example.project_chachacha.template.src.myPage.MyChaChaCha.Interfaces.MyChaChaChaView;
 import com.example.project_chachacha.template.src.myPage.MyChaChaCha.models.MyChaChaChaResult;
 
@@ -80,15 +80,17 @@ public class MyChaChaChaListAdapter extends RecyclerView.Adapter<MyChaChaChaList
     @Override
     public void onBindViewHolder(@NonNull MyChaChaChaListAdapter.CustomViewHolder holder, final int position) {
 
-        holder.mTvShopName.setText(arrayList.get(position).getShopName());
-        Glide.with(holder.itemView.getContext()).load(arrayList.get(position).getImgurl()).into(holder.mIvShopImg);
+        final int size = arrayList.size()-1;
+
+        holder.mTvShopName.setText(arrayList.get(size-position).getShopName());
+        Glide.with(holder.itemView.getContext()).load(arrayList.get(size-position).getImgurl()).into(holder.mIvShopImg);
         holder.mIvShopImg.setAlpha(0.9F);
 
         final View.OnClickListener deleteListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myChaChaChaService.deleteMyCha(USERID, arrayList.get(position).getChanum());
-                pos = position;
+                myChaChaChaService.deleteMyCha(USERID, arrayList.get(size-position).getChanum());
+                pos = size-position;
                 mCustomDialogTwoButton.dismiss();
             }
         };
@@ -97,7 +99,8 @@ public class MyChaChaChaListAdapter extends RecyclerView.Adapter<MyChaChaChaList
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, MyChaShopDetail.class);
-                intent.putExtra("chanum", arrayList.get(position).getChanum());
+                intent.putExtra("chanum", arrayList.get(size-position).getChanum());
+                intent.putExtra("storenum", arrayList.get(size-position).getStorenum());
                 context.startActivity(intent);
             }
         });

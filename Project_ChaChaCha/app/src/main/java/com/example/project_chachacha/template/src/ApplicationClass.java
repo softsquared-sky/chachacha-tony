@@ -20,15 +20,7 @@ public class ApplicationClass extends Application {
     public static MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=uft-8");
     public static MediaType MEDIA_TYPE_JPEG = MediaType.parse("image/jpeg");
 
-    public static String USERNAME;
-    public static String COMMENT;
-    public static String EMAIL;
-    public static String PHONE;
-    public static String SIGNUPTIME;
-
     public static String USERID;
-
-    public static boolean GETMYPAGE = false; // 전역변수로 선언 x
 
     // 테스트 서버 주소
     public static String BASE_URL = "http://www.so-yo.info";
@@ -38,10 +30,10 @@ public class ApplicationClass extends Application {
     public static SharedPreferences sSharedPreferences = null;
 
     // SharedPreferences 키 값
-    public static String TAG = "TEMPLATE_APP";
+    public static String TAG = "ChaChaCha";
 
     // JWT Token 값
-    public static String X_ACCESS_TOKEN = "X-ACCESS-TOKEN";
+    public static final String X_ACCESS_TOKEN = "X-ACCESS-TOKEN";
 
     //날짜 형식
     public static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA);

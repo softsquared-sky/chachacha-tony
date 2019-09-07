@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp">
         <ImageView
+            android:id="@+id/shopDetail_iv_back"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginStart="20dp"
@@ -57,6 +58,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <LinearLayout
                     android:id="@+id/shopDetail_view_shopdetail"
                     android:layout_width="match_parent"
@@ -73,10 +75,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="18.7dp"
                         android:layout_marginTop="15dp"
-                        tools:text="상수리바"
                         android:textColor="@color/black"
                         android:textSize="19sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="상수리바" />
 
                     <TextView
                         android:id="@+id/shopDetail_tv_mood"
@@ -88,8 +90,8 @@
                         android:lineSpacingExtra="4sp"
                         android:textColor="@color/main"
                         android:textSize="10sp"
-                        tools:text="#조용한 #한잔하기_좋은"
-                        tools:ignore="SmallSp" />
+                        tools:ignore="SmallSp"
+                        tools:text="#조용한 #한잔하기_좋은" />
 
                     <TextView
                         android:id="@+id/shopDetail_tv_storeWriting"
@@ -98,10 +100,10 @@
                         android:layout_marginStart="18.7dp"
                         android:layout_marginTop="4.7dp"
                         android:lineSpacingExtra="4sp"
-                        tools:text="좋은 친구와 잔을 부딪히는 횟수와 행복은 비례한다고 생각합니다. "
                         android:textColor="@color/black"
                         android:textSize="10sp"
-                        tools:ignore="SmallSp" />
+                        tools:ignore="SmallSp"
+                        tools:text="좋은 친구와 잔을 부딪히는 횟수와 행복은 비례한다고 생각합니다. " />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -126,8 +128,8 @@
                             android:lineSpacingExtra="4sp"
                             android:textColor="@color/gray"
                             android:textSize="10sp"
-                            tools:text="서대문구 창천동 510-2"
-                            tools:ignore="SmallSp" />
+                            tools:ignore="SmallSp"
+                            tools:text="서대문구 창천동 510-2" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -154,8 +156,8 @@
                             android:lineSpacingExtra="4sp"
                             android:textColor="@color/gray"
                             android:textSize="10sp"
-                            tools:text="오후 05:00 - 오전 02:00 (월요일 휴무)"
-                            tools:ignore="SmallSp" />
+                            tools:ignore="SmallSp"
+                            tools:text="오후 05:00 - 오전 02:00 (월요일 휴무)" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -164,7 +166,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/ic_call"
-                    android:layout_marginEnd="100dp"
+                    android:layout_marginEnd="90dp"
                     android:layout_marginTop="271dp"
                     android:layout_alignParentEnd="true"
                     tools:ignore="ContentDescription" />
@@ -172,15 +174,15 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:src="@drawable/ic_message"
-                    android:layout_toEndOf="@id/shopDetail_iv_call"
-                    android:layout_marginStart="-90dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="40dp"
                     android:layout_marginTop="271dp"
                     tools:ignore="ContentDescription" />
 
                 <RelativeLayout
                     android:id="@+id/shopDetail_view_moreInfo"
                     android:layout_below="@id/shopDetail_view_shopdetail"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:layout_marginEnd="25dp"
@@ -212,17 +214,7 @@
                     </LinearLayout>
                 </RelativeLayout>
 
-                <Button
-                    android:id="@+id/shopDetail_btn_review"
-                    android:layout_width="145dp"
-                    android:layout_height="42dp"
-                    android:text="@string/myChaShop_review"
-                    android:layout_below="@id/shopDetail_view_moreInfo"
-                    android:textColor="@color/white"
-                    android:textSize="15sp"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/style4"
-                    android:layout_marginBottom="22dp"/>
+
 
                 <Button
                     android:id="@+id/shopDetail_btn_chachacha"

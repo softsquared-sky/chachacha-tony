@@ -21,12 +21,12 @@ public class SplashActivity extends BaseActivity implements SplashView {
 
     private CustomDialogOneButton mCustomDialogOneButton;
 
+    private Handler handler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
-        Handler handler = new Handler();
 
         final SplashService splashService = new SplashService(this);
 
@@ -36,17 +36,14 @@ public class SplashActivity extends BaseActivity implements SplashView {
             splashService.getCheckToken(mStrUserId);
         }
         else{
-            Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-            startActivity(intent);
-            finish();
-//            handler.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-//                    startActivity(intent);
-//                    finish();
-//                }
-//            },500);
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            },500);
         }
 
     }
@@ -55,9 +52,14 @@ public class SplashActivity extends BaseActivity implements SplashView {
     @Override
     public void validateSuccess(int code) {
         USERID = mStrUserId;
-        Intent intent = new Intent(SplashActivity.this, MypageActivity.class);
-        startActivity(intent);
-        finish();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(SplashActivity.this, MypageActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        },500);
     }
 
     @Override
@@ -66,8 +68,13 @@ public class SplashActivity extends BaseActivity implements SplashView {
         mCustomDialogOneButton = new CustomDialogOneButton(SplashActivity.this, msg);
         mCustomDialogOneButton.setCancelable(false);
         mCustomDialogOneButton.show();
-        Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-        startActivity(intent);
-        finish();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        },500);
     }
 }

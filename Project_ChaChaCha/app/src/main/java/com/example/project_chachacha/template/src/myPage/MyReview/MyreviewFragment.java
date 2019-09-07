@@ -1,5 +1,6 @@
 package com.example.project_chachacha.template.src.myPage.MyReview;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,10 +23,12 @@ import java.util.List;
 import static com.example.project_chachacha.template.src.ApplicationClass.USERID;
 
 
-public class MyreviewFragment extends Fragment implements MyreviewView {
+public class MyreviewFragment extends Fragment implements MyreviewView, MypageActivity.OnBackPressedListener {
 
     private ArrayList<MyreviewItemData> arrayList;
     private MyreviewListAdapter adapter;
+
+    private MyreviewFragment mMyreviewFragment;
 
     public static MyreviewFragment newInstance(){
         return new MyreviewFragment();
@@ -35,6 +38,8 @@ public class MyreviewFragment extends Fragment implements MyreviewView {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_myreview, container, false);
+
+        mMyreviewFragment = new MyreviewFragment();
 
         ImageView mIvBack = rootView.findViewById(R.id.myreview_iv_back);
         mIvBack.setOnClickListener(new View.OnClickListener() {
@@ -74,5 +79,18 @@ public class MyreviewFragment extends Fragment implements MyreviewView {
     @Override
     public void validateFailure(int code, String message) {
         System.out.println(code + " " + message);
+    }
+
+    @Override
+    public void onBack() {
+        MypageActivity activity = (MypageActivity)getActivity();
+        activity.setOnBackPressedListener(null);
+        activity.replaceFragment(MypageMainFragment.newInstance());
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        ((MypageActivity)context).setOnBackPressedListener(this);
     }
 }

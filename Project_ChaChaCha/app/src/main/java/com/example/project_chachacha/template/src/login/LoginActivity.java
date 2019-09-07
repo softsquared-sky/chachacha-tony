@@ -26,9 +26,6 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     private EditText mEdtUserId, mEdtUserPw;
     private Switch mSwtAuto;
-    private SharedPreferences.Editor editor = sSharedPreferences.edit(); // 수정 가능하면 안으로 넣어주기 메모리를 계속 잡기있기때문에
-
-    private LoginService mLoginService = new LoginService(this); // 안으로 this는 밖에다 빼는것 지양
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +69,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
     }
 
     public void login() {
+        final LoginService mLoginService = new LoginService(this);
         String mStrUserId = mEdtUserId.getText().toString();
         String mStrUserPw = mEdtUserPw.getText().toString();
         mLoginService.postLogin(mStrUserId, mStrUserPw);
@@ -81,9 +79,9 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Override
     public void validateSuccess(int code, String message, String jwt) {
         System.out.println("code: " + code);
-        X_ACCESS_TOKEN = jwt;
         System.out.println(X_ACCESS_TOKEN);
-        editor.putString("token", X_ACCESS_TOKEN);
+        SharedPreferences.Editor editor = sSharedPreferences.edit();
+        editor.putString(X_ACCESS_TOKEN, jwt);
         editor.putString("userId", mEdtUserId.getText().toString());
         editor.putBoolean("check",mSwtAuto.isChecked());
         editor.apply();

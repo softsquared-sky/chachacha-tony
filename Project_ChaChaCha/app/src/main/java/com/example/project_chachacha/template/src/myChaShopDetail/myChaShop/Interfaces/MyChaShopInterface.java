@@ -1,6 +1,6 @@
-package com.example.project_chachacha.template.src.myChaShopDetail.MyChaShop.Interfaces;
+package com.example.project_chachacha.template.src.myChaShopDetail.myChaShop.Interfaces;
 
-import com.example.project_chachacha.template.src.myChaShopDetail.MyChaShop.models.MyChaShopResponse;
+import com.example.project_chachacha.template.src.myChaShopDetail.myChaShop.models.MyChaShopResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

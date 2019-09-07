@@ -2,6 +2,7 @@ package com.example.project_chachacha.template.src.shop.shopInfo.ShopMenu;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,14 +35,21 @@ public class MenuFragment extends Fragment implements MenuView {
     private TextView mTvDrink;
 
     private String message;
+    private int storeNum;
 
     private CustomDialogOneButton customDialogOneButton;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         ViewGroup rootview = (ViewGroup)inflater.inflate(R.layout.fragment_menu, container, false);
+
+        Bundle extra = this.getArguments();
+        if(extra!=null){
+            storeNum = extra.getInt("storenum",0);
+        }
 
         mTvFood = rootview.findViewById(R.id.shopMenu_tv_food);
         mTvDrink = rootview.findViewById(R.id.shopMenu_tv_drink);
@@ -72,7 +80,7 @@ public class MenuFragment extends Fragment implements MenuView {
         drinkRecyclerView.setAdapter(drinkAdapter);
 
         final MenuService menuService = new MenuService(this);
-        menuService.getShopMenu(8); // storeNum 받아서 처리
+        menuService.getShopMenu(storeNum); // storeNum 받아서 처리
         // Inflate the layout for this fragment
         return rootview;
     }
@@ -92,11 +100,9 @@ public class MenuFragment extends Fragment implements MenuView {
             }
             else{
                 mTvFood.setText("안주류");
-                for(int k =0; k<20; k++){
-                    for(int i=0; i<foodList.size(); i++){
-                        MenuItemData menuItemData = new MenuItemData(foodList.get(i).getMenuname(),foodList.get(i).getMenuprice());
-                        foodArrayList.add(menuItemData);
-                    }
+                for(int i=0; i<foodList.size(); i++){
+                    MenuItemData menuItemData = new MenuItemData(foodList.get(i).getMenuname(),foodList.get(i).getMenuprice());
+                    foodArrayList.add(menuItemData);
                 }
                 foodAdapter.notifyDataSetChanged();
             }
@@ -106,11 +112,9 @@ public class MenuFragment extends Fragment implements MenuView {
             }
             else{
                 mTvDrink.setText("주류");
-                for(int k=0; k<5; k++){
-                    for(int i=0; i<drinkList.size(); i++){
-                        MenuItemData menuItemData = new MenuItemData(drinkList.get(i).getMenuname(), drinkList.get(i).getMenuprice());
-                        drinkArrayList.add(menuItemData);
-                    }
+                for(int i=0; i<drinkList.size(); i++){
+                    MenuItemData menuItemData = new MenuItemData(drinkList.get(i).getMenuname(), drinkList.get(i).getMenuprice());
+                    drinkArrayList.add(menuItemData);
                 }
                 drinkAdapter.notifyDataSetChanged();
             }

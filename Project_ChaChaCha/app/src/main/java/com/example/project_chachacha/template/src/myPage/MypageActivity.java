@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.project_chachacha.R;
 import com.example.project_chachacha.template.src.BaseActivity;
@@ -26,6 +27,9 @@ public class MypageActivity extends BaseActivity {
     private ImageView mIvStart, mIvSearch, mIvMain, mIvMychachacha;
 
     private String userid;
+    private boolean checkMyCha;
+
+    private long pressedTime = 0;
 
 //    public static ProfileEditFragment profile_edit;
 
@@ -34,8 +38,11 @@ public class MypageActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
+//        Intent intent = getIntent();
+//        userid = intent.getStringExtra("userid");
+
         Intent intent = getIntent();
-        userid = intent.getStringExtra("userid");
+        checkMyCha = intent.getBooleanExtra("checkMyCha",false);
 
         mIvStart = findViewById(R.id.myPage_iv_chaStart);
         mIvStart.setOnClickListener(new View.OnClickListener() {
@@ -54,18 +61,66 @@ public class MypageActivity extends BaseActivity {
         fragmentManager = getSupportFragmentManager();
 
         mMypageMainFragment = new MypageMainFragment();
-        Bundle bundle = new Bundle();
-        bundle.putString("userid", userid);
-        mMypageMainFragment.setArguments(bundle);
+//        Bundle bundle = new Bundle();
+//        bundle.putString("userid", userid);
+//        mMypageMainFragment.setArguments(bundle);
         mSearchFragment = new SearchFragment();
         mMyChaChaChaFragment = new MyChaChaChaFragment();
 
         transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.myPage_frameLayout, mMypageMainFragment).commitAllowingStateLoss();
+        if(!checkMyCha){
+            transaction.replace(R.id.myPage_frameLayout, mMypageMainFragment).commitAllowingStateLoss();
+        }
+        else{
+            transaction.replace(R.id.myPage_frameLayout, mMyChaChaChaFragment).commitAllowingStateLoss();
+            mIvSearch.setImageResource(R.drawable.ic_msg);
+            mIvMain.setImageResource(R.drawable.ic_empty_mypage);
+            mIvMychachacha.setImageResource(R.drawable.ic_red_like);
+        }
+
 
     }
 
-//    @Override
+    public interface OnBackPressedListener {
+        void onBack();
+    }
+
+    private OnBackPressedListener mBackListener;
+
+    public void setOnBackPressedListener(OnBackPressedListener listener){
+        mBackListener=listener;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(!checkMyCha){
+            if(mBackListener !=null){
+                mBackListener.onBack();
+            }
+            else{
+                if(pressedTime == 0){
+                    Toast.makeText(getApplicationContext(),"한 번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+                    pressedTime = System.currentTimeMillis();
+                }
+                else{
+                    int seconds = (int) (System.currentTimeMillis()-pressedTime);
+                    if(seconds>2000){
+                        Toast.makeText(getApplicationContext(),"한 번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+                        pressedTime =0;
+                    }
+                    else{
+                        super.onBackPressed();
+                        finish();
+                    }
+                }
+            }
+        }
+        else{
+            finish();
+        }
+    }
+
+    //    @Override
 //    public void onBackPressed() { // 리뷰, 저장술집에 대해서도 추가
 //        if(profile_edit!=null){
 //            getSupportFragmentManager().beginTransaction().remove(profile_edit).commit();

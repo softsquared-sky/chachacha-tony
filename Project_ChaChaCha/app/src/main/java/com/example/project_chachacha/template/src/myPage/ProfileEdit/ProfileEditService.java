@@ -38,18 +38,18 @@ class ProfileEditService {
         final ProfileEditInterface profileEditInterface = getRetrofitToken().create(ProfileEditInterface.class);
         profileEditInterface.patchprofile(userid, RequestBody.create(params.toString(),MEDIA_TYPE_JSON)).enqueue(new Callback<ProfileEditResponse>() {
             @Override
-            public void onResponse(@NotNull Call<ProfileEditResponse> call, @NotNull Response<ProfileEditResponse> response) {
+            public void onResponse(Call<ProfileEditResponse> call, Response<ProfileEditResponse> response) {
                 final ProfileEditResponse profileEditResponse = response.body();
                 if(profileEditResponse==null){
                     profileEditView.validateFailure(0,"응답 null");
                     return;
                 }
-
+                System.out.println("성공???????");
                 profileEditView.validateSuccess(profileEditResponse.getCode(), profileEditResponse.getMessage());
             }
 
             @Override
-            public void onFailure(@NotNull Call<ProfileEditResponse> call, @NotNull Throwable t) {
+            public void onFailure(Call<ProfileEditResponse> call, Throwable t) {
                 profileEditView.validateFailure(0,"응답 fail");
             }
         });

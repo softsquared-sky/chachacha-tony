@@ -26,7 +26,6 @@ public class RegisterBossActivity extends BaseActivity implements RegisterView {
     private CustomDialogOneButton mCustomDialogOneButton;
 
     private View viewUserPwCheckLine;
-    private TextView mTvPwComment;
 
     private Timer timer = new Timer();
 
@@ -45,7 +44,6 @@ public class RegisterBossActivity extends BaseActivity implements RegisterView {
 
         viewUserPwCheckLine = findViewById(R.id.registerBoss_view_userPwCheck);
 
-        mTvPwComment = findViewById(R.id.registerBoss_tv_pwComment);
 
         ImageView mIvBack = findViewById(R.id.registerBoss_iv_next);
         mIvBack.setOnClickListener(new View.OnClickListener() {
@@ -68,21 +66,53 @@ public class RegisterBossActivity extends BaseActivity implements RegisterView {
                 String userPwCheck = mEdtUserPwCheck.getText().toString();
                 String userName = mEdtName.getText().toString();
                 String userPhone = mEdtPhone.getText().toString();
-                if(userId.equals("")||userPw.equals("")||userPwCheck.equals("")||userName.equals("")||
-                        userPhone.equals("")){
-                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "모든 항목을 입력해주세요.");
+                if(userId.equals("")){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "아이디를 입력해주세요.");
                     mCustomDialogOneButton.setCancelable(false);
                     mCustomDialogOneButton.show();
+                    mEdtUserId.requestFocus();
+                }
+                else if(userPw.equals("")){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "비밀번호를 입력해주세요.");
+                    mCustomDialogOneButton.setCancelable(false);
+                    mCustomDialogOneButton.show();
+                    mEdtUserPw.requestFocus();
+                }
+                else if(userPwCheck.equals("")){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "비밀번호를 재입력해주세요.");
+                    mCustomDialogOneButton.setCancelable(false);
+                    mCustomDialogOneButton.show();
+                    mEdtUserPwCheck.requestFocus();
+                }
+                else if(userName.equals("")){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "이름을 입력해주세요.");
+                    mCustomDialogOneButton.setCancelable(false);
+                    mCustomDialogOneButton.show();
+                    mEdtName.requestFocus();
+                }
+                else if(userPhone.equals("")){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "전화번호를 입력해주세요.");
+                    mCustomDialogOneButton.setCancelable(false);
+                    mCustomDialogOneButton.show();
+                    mEdtPhone.requestFocus();
                 }
                 else if(!Pattern.matches("^[a-z0-9]{4,10}$",userId)){
-                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "아이디가 올바르지 않습니다.");
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "아이디가 올바른 형식이 아닙니다.");
                     mCustomDialogOneButton.setCancelable(false);
                     mCustomDialogOneButton.show();
                     mEdtUserId.setText("");
                     mEdtUserId.requestFocus();
                 }
+                else if(!Pattern.matches("^(?=.*\\d)(?=.*[~`!@#$%\\^&*()-])(?=.*[a-zA-Z]).{8,15}$", userPw)){
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "비밀번호가 올바른 형식이 아닙니다.");
+                    mCustomDialogOneButton.setCancelable(false);
+                    mCustomDialogOneButton.show();
+                    mEdtUserPw.setText("");
+                    mEdtUserPwCheck.setText("");
+                    mEdtUserPw.requestFocus();
+                }
                 else if(!CheckPw){
-                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "비밀번호가 올바르지 않습니다.");
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "비밀번호가 일치하지 않습니다.");
                     mCustomDialogOneButton.setCancelable(false);
                     mCustomDialogOneButton.show();
                     mEdtUserPw.setText("");
@@ -90,14 +120,14 @@ public class RegisterBossActivity extends BaseActivity implements RegisterView {
                     mEdtUserPw.requestFocus();
                 }
                 else if(!Pattern.matches("^[가-힣]{2,5}$",userName)){
-                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "이름을 올바르게 입력해주세요.");
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "이름이 올바른 형식이 아닙니다.");
                     mCustomDialogOneButton.setCancelable(false);
                     mCustomDialogOneButton.show();
                     mEdtName.setText("");
                     mEdtName.requestFocus();
                 }
                 else if(!Pattern.matches("^01([0|1|6|7|8|9][0-9]{3,4}[0-9]{4})$",userPhone)){
-                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "전화번호를 올바르게 입력해주세요.");
+                    mCustomDialogOneButton = new CustomDialogOneButton(RegisterBossActivity.this, "전화번호가 올바른 형식이 아닙니다.");
                     mCustomDialogOneButton.setCancelable(false);
                     mCustomDialogOneButton.show();
                     mEdtPhone.setText("");
@@ -118,29 +148,16 @@ public class RegisterBossActivity extends BaseActivity implements RegisterView {
                     public void run() {
                         if(mEdtUserPw.getText().toString().equals("")){
                             viewUserPwCheckLine.setBackground(getDrawable(R.drawable.style3));
-                            mTvPwComment.setText("비밀번호를 입력해주세요.");
-                            mTvPwComment.setTextColor(Color.parseColor("#99FF0000"));
                             CheckPw =false;
                         }
                         else{
-                            if(!Pattern.matches("^(?=.*\\d)(?=.*[~`!@#$%\\^&*()-])(?=.*[a-zA-Z]).{8,15}$", mEdtUserPw.getText().toString())){
-                                mTvPwComment.setText("비밀번호가 올바른형식이 아닙니다.\n영어,특수문자,숫자 조합으로 8자리이상 15자리이하입니다.");
-                                mTvPwComment.setTextColor(Color.parseColor("#99FF0000"));
-                                CheckPw =false;
+                            if(mEdtUserPw.getText().toString().equals(mEdtUserPwCheck.getText().toString())){
+                                viewUserPwCheckLine.setBackground(getDrawable(R.drawable.style3));
+                                CheckPw =true;
                             }
                             else{
-                                if(mEdtUserPw.getText().toString().equals(mEdtUserPwCheck.getText().toString())){
-                                    viewUserPwCheckLine.setBackground(getDrawable(R.drawable.style3));
-                                    mTvPwComment.setText("비밀번호가 일치합니다.");
-                                    mTvPwComment.setTextColor(Color.parseColor("#00bfff"));
-                                    CheckPw =true;
-                                }
-                                else{
-                                    viewUserPwCheckLine.setBackground(getDrawable(R.drawable.style8));
-                                    mTvPwComment.setText("비밀번호가 일치하지 않습니다.");
-                                    mTvPwComment.setTextColor(Color.parseColor("#99FF0000"));
-                                    CheckPw =false;
-                                }
+                                viewUserPwCheckLine.setBackground(getDrawable(R.drawable.style8));
+                                CheckPw =false;
                             }
                         }
                     }

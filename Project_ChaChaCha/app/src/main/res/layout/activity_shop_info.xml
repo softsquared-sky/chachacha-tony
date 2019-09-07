@@ -1,123 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".template.src.shop.shopInfo.ShopInfoActivity"
     android:background="@color/white">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <RelativeLayout
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="@color/white"
-            android:layout_marginBottom="12dp">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="20dp"
-                android:src="@drawable/ic_chevron_left_black_24dp"
-                android:layout_centerVertical="true"
-                tools:ignore="ContentDescription" />
-            <TextView
-                android:id="@+id/shopInfo_tv_title"
-                android:layout_width="167dp"
-                android:layout_height="wrap_content"
-                tools:text="가게이름"
-                android:textSize="18sp"
-                android:textColor="@color/Title_Color"
-                android:lineSpacingExtra="4dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:layout_centerInParent="true"/>
-            <ImageView
-                android:id="@+id/shopInfo_iv_star"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_empty_star"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="11.3dp"
-                android:layout_marginEnd="13.3dp"
-                tools:ignore="ContentDescription" />
-        </RelativeLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="-4dp">
-            <LinearLayout
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:orientation="vertical">
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:layout_marginBottom="12dp">
+                <ImageView
+                    android:id="@+id/shopinfo_iv_back"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_chevron_left_black_24dp"
+                    android:layout_centerVertical="true"
+                    tools:ignore="ContentDescription" />
                 <TextView
-                    android:onClick="menuClick"
-                    android:id="@+id/shopInfo_tv_menu"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:text="@string/shopInfo_menu"
+                    android:id="@+id/shopInfo_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="가게이름"
+                    android:textSize="18sp"
+                    android:textColor="@color/Title_Color"
+                    android:lineSpacingExtra="4dp"
                     android:gravity="center"
-                    android:textSize="14sp"
-                    android:textColor="@drawable/shop_info_button"/>
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"/>
+                <ImageView
+                    android:id="@+id/shopInfo_iv_star"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_empty_star"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="11.3dp"
+                    android:layout_marginEnd="13.3dp"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="-4dp">
+                <LinearLayout
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:onClick="menuClick"
+                        android:id="@+id/shopInfo_tv_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="@string/shopInfo_menu"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@drawable/shop_info_button"/>
+                    <View
+                        android:id="@+id/shopInfo_view_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/shop_info_tab_press"/>
+                </LinearLayout>
                 <View
-                    android:id="@+id/shopInfo_view_menu"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@drawable/shop_info_tab_press"/>
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"/>
+                <LinearLayout
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:onClick="menuClick"
+                        android:id="@+id/shopInfo_tv_review"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="@string/shopInfo_review"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="@drawable/shop_info_button"/>
+                    <View
+                        android:id="@+id/shopInfo_view_review"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/shop_info_tab_press"/>
+                </LinearLayout>
             </LinearLayout>
+            <FrameLayout
+                android:id="@+id/shopInfo_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/background_shadow" />
             <View
-                android:layout_width="20dp"
-                android:layout_height="match_parent"/>
-            <LinearLayout
-                android:layout_width="90dp"
-                android:layout_height="50dp"
-                android:orientation="vertical">
-                <TextView
-                    android:onClick="menuClick"
-                    android:id="@+id/shopInfo_tv_review"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:text="@string/shopInfo_review"
-                    android:gravity="center"
-                    android:textSize="14sp"
-                    android:textColor="@drawable/shop_info_button"/>
-                <View
-                    android:id="@+id/shopInfo_view_review"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@drawable/shop_info_tab_press"/>
-            </LinearLayout>
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
         </LinearLayout>
-        <FrameLayout
-            android:id="@+id/shopInfo_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25dp"
-            android:background="@drawable/background_shadow" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="100dp"/>
-    </LinearLayout>
+
+        <Button
+            android:id="@+id/shopInfo_btn_review"
+            android:layout_width="145dp"
+            android:layout_height="42dp"
+            android:text="@string/myChaShop_review"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/style4"
+            android:layout_marginBottom="22dp"/>
 
 
-    <Button
-        android:id="@+id/shopInfo_btn_chachacha"
-        android:layout_width="145dp"
-        android:layout_height="42dp"
-        android:text="@string/shopDetail_chachacha"
-        android:textColor="#ffffff"
-        android:textSize="15sp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/style4"
-        android:layout_marginBottom="22dp"/>
+        <Button
+            android:id="@+id/shopInfo_btn_chachacha"
+            android:layout_width="145dp"
+            android:layout_height="42dp"
+            android:text="@string/shopDetail_chachacha"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/style4"
+            android:layout_marginBottom="22dp"/>
 
-</RelativeLayout>
+    </RelativeLayout>
+
+
+
+</FrameLayout>

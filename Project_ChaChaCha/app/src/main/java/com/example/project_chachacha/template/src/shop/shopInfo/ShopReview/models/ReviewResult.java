@@ -7,12 +7,12 @@ import java.util.List;
 public class ReviewResult {
 
     @SerializedName("reviewcount")
-    private List<ReviewCount> reviewCount = null;
+    private int reviewCount;
 
     @SerializedName("review")
     private List<Review> review = null;
 
-    public List<ReviewCount> getReviewCount() {
+    public int getReviewCount() {
         return reviewCount;
     }
 

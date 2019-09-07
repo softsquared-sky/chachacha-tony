@@ -12,15 +12,15 @@ import retrofit2.Response;
 
 import static com.example.project_chachacha.template.src.ApplicationClass.getRetrofitToken;
 
-class MypageMainService {
+public class MypageMainService {
 
     private final MypageMainView mMypageMainView;
 
-    MypageMainService(MypageMainView mypageMainView) {
+    public MypageMainService(MypageMainView mypageMainView) {
         this.mMypageMainView = mypageMainView;
     }
 
-    void getMypage(String userid) {
+    public void getMypage(String userid) {
         System.out.println("실행?");
         final MypageMainInterface mypageMainInterface = getRetrofitToken().create(MypageMainInterface.class);
         mypageMainInterface.getMypage(userid).enqueue(new Callback<MypageMainResponse>() {

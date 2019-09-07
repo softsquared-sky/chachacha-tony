@@ -1,9 +1,8 @@
-package com.example.project_chachacha.template.src.myChaShopDetail.MyChaShop;
+package com.example.project_chachacha.template.src.myChaShopDetail.myChaShop;
 
-import com.example.project_chachacha.template.src.myChaShopDetail.MyChaShop.Interfaces.MyChaShopInterface;
-import com.example.project_chachacha.template.src.myChaShopDetail.MyChaShop.Interfaces.MyChaShopView;
-import com.example.project_chachacha.template.src.myChaShopDetail.MyChaShop.models.MyChaShopResponse;
-import com.example.project_chachacha.template.src.myPage.MyChaChaCha.MyChaChaChaService;
+import com.example.project_chachacha.template.src.myChaShopDetail.myChaShop.Interfaces.MyChaShopInterface;
+import com.example.project_chachacha.template.src.myChaShopDetail.myChaShop.Interfaces.MyChaShopView;
+import com.example.project_chachacha.template.src.myChaShopDetail.myChaShop.models.MyChaShopResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;

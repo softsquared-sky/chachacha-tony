@@ -1,5 +1,6 @@
 package com.example.project_chachacha.template.src.myPage.StoreShop;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -22,11 +23,13 @@ import java.util.List;
 import static com.example.project_chachacha.template.src.ApplicationClass.USERID;
 
 
-public class StoreShopFragment extends Fragment implements StoreShopView {
+public class StoreShopFragment extends Fragment implements StoreShopView, MypageActivity.OnBackPressedListener{
 
     private RecyclerView recyclerView;
     private StoreShopListAdapter adapter;
     private ArrayList<StoreShopItemData> arrayList;
+
+    private StoreShopFragment mStoreShopFragment;
 
     private ImageView mIvBack;
 
@@ -39,6 +42,8 @@ public class StoreShopFragment extends Fragment implements StoreShopView {
                              Bundle savedInstanceState) {
 
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_store_shop, container, false);
+
+        mStoreShopFragment = new StoreShopFragment();
 
         final StoreShopService storeShopService = new StoreShopService(this);
         storeShopService.getBookMark(USERID);
@@ -75,5 +80,18 @@ public class StoreShopFragment extends Fragment implements StoreShopView {
     @Override
     public void validateFailure(int code, String message) {
 
+    }
+
+    @Override
+    public void onBack() {
+        MypageActivity activity = (MypageActivity)getActivity();
+        activity.setOnBackPressedListener(null);
+        activity.replaceFragment(MypageMainFragment.newInstance());
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        ((MypageActivity)context).setOnBackPressedListener(this);
     }
 }

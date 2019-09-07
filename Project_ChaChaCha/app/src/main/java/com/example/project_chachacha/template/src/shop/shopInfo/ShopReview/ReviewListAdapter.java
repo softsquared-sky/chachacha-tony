@@ -39,35 +39,37 @@ public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.Re
     @Override
     public void onBindViewHolder(@NonNull ReviewListviewholder holder, int position) {
 
-        if(arrayList.get(position).getRate()==5){
+        final int size = arrayList.size()-1;
+
+        if(arrayList.get(size-position).getRate()==5){
             holder.ivRate1.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate2.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate3.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate4.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate5.setImageResource(R.drawable.ic_yellow_star);
         }
-        else if(arrayList.get(position).getRate()==4){
+        else if(arrayList.get(size-position).getRate()==4){
             holder.ivRate1.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate2.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate3.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate4.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate5.setImageResource(R.drawable.ic_star_black_24dp);
         }
-        else if(arrayList.get(position).getRate()==3){
+        else if(arrayList.get(size-position).getRate()==3){
             holder.ivRate1.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate2.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate3.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate4.setImageResource(R.drawable.ic_star_black_24dp);
             holder.ivRate5.setImageResource(R.drawable.ic_star_black_24dp);
         }
-        else if(arrayList.get(position).getRate()==2){
+        else if(arrayList.get(size-position).getRate()==2){
             holder.ivRate1.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate2.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate3.setImageResource(R.drawable.ic_star_black_24dp);
             holder.ivRate4.setImageResource(R.drawable.ic_star_black_24dp);
             holder.ivRate5.setImageResource(R.drawable.ic_star_black_24dp);
         }
-        else if(arrayList.get(position).getRate()==1){
+        else if(arrayList.get(size-position).getRate()==1){
             holder.ivRate1.setImageResource(R.drawable.ic_yellow_star);
             holder.ivRate2.setImageResource(R.drawable.ic_star_black_24dp);
             holder.ivRate3.setImageResource(R.drawable.ic_star_black_24dp);
@@ -82,8 +84,8 @@ public class ReviewListAdapter extends RecyclerView.Adapter<ReviewListAdapter.Re
             holder.ivRate5.setImageResource(R.drawable.ic_star_black_24dp);
         }
 
-        holder.tvName.setText(arrayList.get(position).getName());
-        holder.tvContent.setText(arrayList.get(position).getContent());
+        holder.tvName.setText(arrayList.get(size-position).getName());
+        holder.tvContent.setText(arrayList.get(size-position).getContent());
 
         if(position==arrayList.size()-1){
             System.out.println("안보이게?");
